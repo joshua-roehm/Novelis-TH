@@ -1,0 +1,241 @@
+Begin DDE Information.
+    Last DDE Source:	19
+Begin DDE Source Definition.
+    Source Name:		Galaxy
+    Application Name:		\\NA\NA
+    Topic Name:			NA
+    DDE Source ID:		1
+    Request Initial Data:	1
+    Always Advise:		0
+    SuiteLink:			3
+    Begin DDE Points
+    End DDE Points
+End DDE Source Definition.
+Begin DDE Source Definition.
+    Source Name:		N11_CIU_CONT
+    Application Name:		FSGateway
+    Topic Name:			N11_CIU_CONT
+    DDE Source ID:		2
+    Request Initial Data:	1
+    Always Advise:		1
+    SuiteLink:			1
+    Begin DDE Points
+        n11_rCoil_Avg;081A:  F;Value;Coil_Avg
+        n11_rBW_Now;0557:  F;Value;Basis_Weight_Now
+        n11_rCoil_Min;0434:  F;Value;Coil_Min
+        al_rExit_TGT;03D9:  F;Value;Alloy_TGT
+        n11_rA7_Constant;037A:  F;Value;A7
+        entry_iSTDZ_Aborted;0284:  I32;Value;STDZ_Aborted
+        n11_rSample_Voltage;0276:  F;Value;Sample_Voltage
+        n11_rSample_Value;0275:  F;Value;Sample_Value
+        n11_iSensor_Mode;0256:  I32;Value;Scanner_Status
+        n11_rSpecific_Gravity;024E:  F;Value;BW_Spec_Gravity
+        n11_rRX_Head_Temp;01FF:  F;Value;Temp_RX_Head
+        n11_rSTDZ_RX_Head_Temp;01FD:  F;Value;Temp_RX_Head_STDZ
+        n11_rSTDZ_Open_Volts;01F8:  F;Value;STDZ_Open_Volts
+        n11_rSTDZ_Closed_Volts;01F7:  F;Value;STDZ_Closed_Volts
+        n11_rThickness_Now;01EE:  F;Value;Basis_Weight_Now_3
+        n11_rBW_GSM;01ED:  F;Value;Basis_Weight_Now_2
+        n11_rBW_Correction;01EC:  F;Value;BW_Corr
+        n11_rBW_Dyn_Offset;01EB:  F;Value;BW_Dyn_Offset
+        n11_rBW_KCM;01EA:  F;Value;BW_KCM
+        n11_rD3_Constant;01E9:  F;Value;D3
+        n11_rD2_Constant;01E8:  F;Value;D2
+        n11_rD1_Constant;01E7:  F;Value;D1
+        n11_rA6_Constant;01E6:  F;Value;A6
+        n11_rA5_Constant;01E5:  F;Value;A5
+        n11_rA4_Constant;01E4:  F;Value;A4
+        n11_rA3_Constant;01E3:  F;Value;A3
+        n11_rA2_Constant;01E2:  F;Value;A2
+        n11_rA1_Constant;01E1:  F;Value;A1
+        al_rEntry_TGT;01E0:  F;Value;Alloy_TGT
+        n11_iSTDZ_Open_Min_Alarm;01DE:  I32;Value;STDZ_Open_Min_Alarm
+        n11_iSTDZ_Closed_Max_Alarm;01DD:  I32;Value;STDZ_Closed_Max_Alarm
+        n11_iShutter_Fault_Alarm;01DC:  I32;Value;Shutter_Fault_Alarm
+        n11_iBad_STDZ_Alarm;01DB:  I32;Value;Bad_STDZ_Alarm
+        n11_iSTDZ_Required;01BB:  I32;Value;STDZ_Required
+        n11_iGauge_Ready;01BA:  I32;Value;Gauge_Ready
+        n11_iGauge_Healthy;01B9:  I32;Value;Gauge_Healthy
+        n11_rCoil_Max;00DE:  F;Value;Coil_Max
+        n11_iSensor_Mode_Manual;0043:  I32;Value;Scanner_Status
+    End DDE Points
+End DDE Source Definition.
+Begin DDE Source Definition.
+    Source Name:		N11_CIU_MMIO
+    Application Name:		FSGateway
+    Topic Name:			N11_CIU_MMIO
+    DDE Source ID:		6
+    Request Initial Data:	1
+    Always Advise:		1
+    SuiteLink:			1
+    Begin DDE Points
+        n11_dShutter_Lockout_Status;0554:  HDD_STATE(0)[3]
+        entry_rGauge_Absolute;0551:  EU[37]
+        n11_dCFRM_REV_CMD;0424:  STATE[5]
+        n11_dE_Stop_Status;0211:  HDD_STATE(0)[2]
+        entry_rGauge_Deviation;020A:  EU[36]
+        n11_rRX_HV_Monitor;0204:  EU[28]
+        n11_rDetector_Volts;0201:  EU[24]
+        n11_dShutter_Command;01F4:  STATE[4]
+        n11_dDetector_Heater;01F3:  STATE[7]
+        n11_rCIU_Cabinet_Temp;01D0:  EU[44]
+        n11_dCFRM_FWD_CMD;008E:  STATE[6]
+    End DDE Points
+End DDE Source Definition.
+Begin DDE Source Definition.
+    Source Name:		S7_DB1000
+    Application Name:		FSGateway
+    Topic Name:			S7_PLC_DB1000
+    DDE Source ID:		17
+    Request Initial Data:	1
+    Always Advise:		1
+    SuiteLink:			1
+    Begin DDE Points
+        S7_mIN_Setup_OrderNB_C10;0956:  CHAR:51
+        S7_mIN_Setup_ProdID_C16;0954:  CHAR:31
+        S7_mIN_Setup_Alloy_C13;0953:  CHAR:98
+        S7_mIN_Setup_Alloy_C6;0945:  CHAR:91
+        S7_mIN_Setup_Alloy_C20;0880:  CHAR:105
+        S7_mIN_Setup_OrderNB_C19;087D:  CHAR:60
+        S7_mIN_Setup_Alloy_C17;084E:  CHAR:102
+        S7_mIN_Setup_ProdID_C15;084D:  CHAR:30
+        S7_mIN_Setup_OrderNB_C16;084B:  CHAR:57
+        S7_mIN_Setup_Alloy_C14;081C:  CHAR:99
+        S7_mIN_Setup_Alloy_C12;081B:  CHAR:97
+        S7_mIN_Setup_OrderNB_C13;0819:  CHAR:54
+        S7_mIN_Setup_OrderNB_C9;07E9:  CHAR:50
+        S7_mIN_Setup_Alloy_C30;07E7:  CHAR:115
+        S7_mIN_Setup_OrderNB_C6;07B7:  CHAR:47
+        S7_mIN_Setup_Alloy_C27;07B5:  CHAR:112
+        S7_rIN_Run_StripSpeed;0785:  REAL:120
+        S7_mIN_Setup_Alloy_C24;0783:  CHAR:109
+        S7_rIN_Setup_TargetWidth;0753:  REAL:66
+        S7_mIN_Setup_ProdID_C24;0752:  CHAR:39
+        S7_mIN_Setup_Alloy_C21;0751:  CHAR:106
+        S7_dIN_Cmd_OnSheet;0659:  BYTE:118
+        S7_mIN_Setup_ProdID_C21;0658:  CHAR:36
+        S7_mIN_Setup_Alloy_C18;0657:  CHAR:103
+        S7_dIN_Cmd_StartMeasuring;05FB:  BYTE:112
+        S7_mIN_Setup_ProdID_C12;05FA:  CHAR:27
+        S7_mIN_Setup_ProdID_C18;05F9:  CHAR:33
+        S7_mIN_Setup_Alloy_C15;05F7:  CHAR:100
+        S7_mIN_Setup_Alloy_C4;0553:  CHAR:89
+        S7_mIN_Setup_Alloy_C11;0440:  CHAR:96
+        S7_rIN_Setup_TargetThick;043F:  REAL:62
+        S7_mIN_Setup_OrderNB_C8;0436:  CHAR:49
+        S7_dIN_Cmd_StopMeasuring;0435:  BYTE:117
+        S7_mIN_Setup_ProdID_C14;0428:  CHAR:29
+        S7_rIN_Setup_TolMinus;0426:  REAL:74
+        S7_mIN_Setup_OrderNB_C5;0425:  CHAR:46
+        S7_dIN_Cmd_LoadSetup;0423:  BYTE:111
+        S7_mIN_Setup_ProdID_C20;0420:  CHAR:35
+        S7_mIN_Setup_ProdID_C23;041F:  CHAR:38
+        S7_mIN_Setup_OrderNB_C2;03DD:  CHAR:43
+        S7_mIN_Setup_OrderNB_C7;03DB:  CHAR:48
+        S7_mIN_Setup_ProdID_C1;02A0:  CHAR:16
+        S7_mIN_Setup_Alloy_C1;029F:  CHAR:86
+        S7_mIN_Setup_Alloy_C2;027C:  CHAR:87
+        S7_mIN_Setup_OrderNB_C1;0254:  CHAR:42
+        S7_mIN_Setup_Alloy_C7;020D:  CHAR:92
+        S7_mIN_Setup_Alloy_C8;020C:  CHAR:93
+        S7_mIN_Setup_Alloy_C9;020B:  CHAR:94
+        S7_mIN_Setup_ProdID_C10;0208:  CHAR:25
+        S7_mIN_Setup_ProdID_C9;0205:  CHAR:24
+        S7_mIN_Setup_ProdID_C6;01FE:  CHAR:21
+        S7_mIN_Setup_ProdID_C7;01FC:  CHAR:22
+        S7_mIN_Setup_ProdID_C8;01FB:  CHAR:23
+        S7_mIN_Setup_OrderNB_C4;01FA:  CHAR:45
+        S7_mIN_Setup_Alloy_C10;01F5:  CHAR:95
+        S7_mIN_Setup_ProdID_C5;00E4:  CHAR:20
+        S7_mIN_Setup_Alloy_C28;00D7:  CHAR:113
+        S7_mIN_Setup_OrderNB_C17;00D6:  CHAR:58
+        S7_mIN_Setup_OrderNB_C11;00D4:  CHAR:52
+        S7_mIN_Setup_ProdID_C4;00C4:  CHAR:19
+        S7_mIN_Setup_ProdID_C2;00C2:  CHAR:17
+        S7_mIN_Setup_ProdID_C3;00C1:  CHAR:18
+        S7_dIN_Cmd_Standardize;00B6:  BYTE:115
+        S7_mIN_Setup_Alloy_C23;00AE:  CHAR:108
+        S7_mIN_Setup_Alloy_C26;00AD:  CHAR:111
+        S7_dIN_Setup_Send;00AA:  BYTE:0
+        S7_mIN_Setup_Alloy_C16;00A9:  CHAR:101
+        S7_mIN_Setup_OrderNB_C20;00A8:  CHAR:61
+        S7_mIN_Setup_Alloy_C25;00A7:  CHAR:110
+        S7_mIN_Setup_ProdID_C22;00A6:  CHAR:37
+        S7_mIN_Setup_OrderNB_C15;00A4:  CHAR:56
+        S7_mIN_Setup_OrderNB_C18;00A3:  CHAR:59
+        S7_mIN_Setup_ProdID_C13;00A1:  CHAR:28
+        S7_mIN_Setup_Alloy_C29;0094:  CHAR:114
+        S7_mIN_Setup_Alloy_C19;0092:  CHAR:104
+        S7_mIN_Setup_ProdID_C11;0090:  CHAR:26
+        S7_dIN_Cmd_OffSheet;008F:  BYTE:119
+        S7_mIN_Setup_OrderNB_C12;0081:  CHAR:53
+        S7_mIN_Setup_Alloy_C22;0080:  CHAR:107
+        S7_mIN_Setup_ProdID_C19;007E:  CHAR:34
+        S7_mIN_Setup_OrderNB_C14;007D:  CHAR:55
+        S7_mIN_Setup_ProdID_C17;007C:  CHAR:32
+        S7_rIN_Setup_TolPlus;007B:  REAL:70
+        S7_mIN_Setup_Alloy_C3;0045:  CHAR:88
+        S7_mIN_Setup_Alloy_C5;0044:  CHAR:90
+        S7_mIN_Setup_OrderNB_C3;0042:  CHAR:44
+    End DDE Points
+End DDE Source Definition.
+Begin DDE Source Definition.
+    Source Name:		S7_DB1001
+    Application Name:		FSGateway
+    Topic Name:			S7_PLC_DB1001
+    DDE Source ID:		18
+    Request Initial Data:	1
+    Always Advise:		1
+    SuiteLink:			1
+    Begin DDE Points
+        S7_rOUT_Meas_Thck_Now;084C:  REAL:208
+        S7_mOUT_Stat_Alloy_Trimmed;03EE:  STRING:52:30
+        S7_dOUT_Stat_SetupLoad;03ED:  BYTE:110
+        S7_rOUT_Meas_ProdLength;03EB:  REAL:204
+        S7_dOUT_Stat_GaugeMeas;03EA:  BYTE:106
+        S7_mOUT_Meas_ProductID;03E9:  STRING:112:24
+        S7_rOUT_Stat_AIS;03E6:  REAL:84
+        S7_mOUT_Stat_ProdID;03DA:  STRING:0:24
+        S7_dOUT_Stat_STDZFail;03B7:  BYTE:99
+        S7_dOUT_Stat_ShutClosed;0285:  BYTE:104
+        S7_dOUT_Stat_GaugeReady;0280:  BYTE:109
+        S7_dOUT_Stat_MeasMode;027D:  BYTE:101
+        S7_rOUT_Meas_TolPlus;0255:  REAL:142
+        S7_rOUT_Meas_AvgThck;0203:  REAL:184
+        S7_rOUT_Stat_AIZ;0202:  REAL:88
+        S7_rOUT_Meas_TargetThick;0200:  REAL:138
+        S7_rOUT_Meas_TolMinus;01F9:  REAL:146
+        S7_dOUT_Stat_ManMode;01F2:  BYTE:102
+        S7_dOUT_Stat_FrameStat;01DF:  BYTE:105
+        S7_rOUT_Meas_ThskStdev;01CD:  REAL:196
+        S7_rOUT_Meas_MinThck;01C7:  REAL:188
+        S7_dOUT_Stat_STDZInProg;01C4:  BYTE:98
+        S7_dOUT_Stat_Healthy;01C3:  BYTE:96
+        S7_rOUT_Meas_MaxThck;01C2:  REAL:192
+        S7_rOUT_Stat_TargetThick;01C1:  REAL:48
+        S7_mOUT_Meas_Alloy;01C0:  STRING:150:30
+        S7_mOUT_Stat_OrderNB;01BF:  STRING:26:20
+        S7_dOUT_Stat_STDZReq;01BE:  BYTE:97
+        S7_dOUT_Meas_MeasMode;01B8:  BYTE:182
+    End DDE Points
+End DDE Source Definition.
+Begin DDE Source Definition.
+    Source Name:		S7_PLC_Stats
+    Application Name:		FSGateway
+    Topic Name:			S7_PLC_Stats
+    DDE Source ID:		19
+    Request Initial Data:	1
+    Always Advise:		1
+    SuiteLink:			1
+    Begin DDE Points
+        S7_iServer_Timeout_Status;07E8:  #Timeout
+        S7_iServer_Retried_Status;07B6:  #Retried
+        S7_dServer_Connection_Status;0784:  $Connected
+        S7_iServer_Received_Status;043D:  #Received
+        S7_iServer_Overrun_Status;0422:  #Overrun
+        S7_iServer_Latency_Status;00B5:  #Latency
+        S7_iServer_Sent_Status;00A2:  #Sent
+        S7_iServer_Failure_Status;008D:  #Failure
+    End DDE Points
+End DDE Source Definition.
+End DDE Information.
