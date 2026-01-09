@@ -1,0 +1,216 @@
+# REV = 1
+
+# PAC CONTROL TAG DATABASE DUMP
+# ----------------------------------------------------------------
+# NAME :         C:\AIS_OPTO_APPLICATION\Novelis_TH_Coater_2_DDD\Novelis_TH_Coater_2_DDD.idb
+# VERSION :      R9.1a
+# TIME/DATE :    14:29:46 5/7/2019
+# 
+# INSTRUCTIONS : This file gets written with the corresponding IDB file.
+#                It is not read by PAC Control. It may be used by other programs to 
+#                get basic information about the tag database.
+#                
+#                Each tag (e.g. variables, I/O units and points, charts, etc.) is 
+#                listed here. 
+#                
+#                More columns or tag types (e.g. TAG2) may be added in the future.
+#                
+#                
+# BITMASK INFO:  Here is the list of bitmasks used by PAC Control.
+#                More than one bit may be set for a given tag. Currently, the only types
+#                that can have more than one bit set at a time are digital points with 
+#                features (e.g. digital input with counter) or a pointer.
+#                
+#                BITMASK 0
+#                -------------------------------------------
+#                DIN_SMART                        0x40000000
+#                DIN_COUNTER                      0x00000001
+#                DIN_COUNTER_QUADRATURE           0x00000002
+#                DOUT_SMART                       0x10000000
+#                DOUT_TPO                         0x00010000
+#                DIN_ON_PULSE_MEAS                0x00000010
+#                DIN_OFF_PULSE_MEAS               0x00000020
+#                DIN_FREQUENCY                    0x00000040
+#                DIN_PERIOD                       0x00000080
+#                DIN_ON_TIME_TOTALIZER            0x00000100
+#                DIN_OFF_TIME_TOTALIZER           0x00000200
+#                
+#                BITMASK 1
+#                -------------------------------------------
+#                AIN                              0x00000001
+#                AOUT                             0x00000002
+#                PID_LOOP    (mistic)             0x00000200
+#                PID_LOOP_2  (OptoMMP)            0x00000004
+#                DIGITAL_EVENT_REACTION           0x00000008
+#                ANALOG_EVENT_REACTION            0x00000010
+#                EVENT_REACTION_GROUP             0x00000080
+#                CHART                            0x00000100
+#                
+#                BITMASK 2
+#                -------------------------------------------
+#                BOARD_SMART_DIGITAL              0x00000002
+#                BOARD_REMOTE_SIMPLE_DIGITAL      0x00000004
+#                BOARD_SMART_ANALOG               0x00000008
+#                BOARD_SMART_ANALOG_B200          0x00001000
+#                BOARD_SMART_DIGITAL_SNAP         0x00002000
+#                BOARD_SMART_ANALOG_SNAP          0x00004000
+#                BOARD_SMART_DIGITAL_B100         0X00010000
+#                BOARD_REMOTE_SIMPLE_DIGITAL_SNAP 0X00020000
+#                BOARD_DIGITAL_SNAP_64            0x00040000
+#                BOARD_MIXED_SNAP_64              0x00080000
+#                BOARD_DIGITAL_SNAP_UIO_64        0x00100000
+#                BOARD_MIXED_SNAP_UIO_64          0x00200000
+#                BOARD_MIXED_SNAP_UIO_AD64        0x00400000
+#                BOARD_MIXED_SNAP_SIO_AD64        0x00800000
+#                BOARD_SNAP_PAC_R1                0x10000000
+#                BOARD_SNAP_PAC_R2                0x20000000
+#                BOARD_GENERIC_OPTOMMP            0x40000000
+# 
+#                BITMASK 3
+#                -------------------------------------------
+#                VARIABLE_INTEGER                 0x00000008
+#                VARIABLE_FLOAT                   0x00000010
+#                VARIABLE_TIMER                   0x00000020
+#                VARIABLE_STRING                  0x00000040
+#                VARIABLE_POINTER                 0x80000000
+#                TABLE_INTEGER                    0x00000100
+#                TABLE_FLOAT                      0x00000200
+#                TABLE_STRING                     0x00000800
+#                TABLE_POINTER                    0x00001000
+#                VARIABLE_UP_TIMER                0X00002000
+#                VARIABLE_INTEGER_64              0X00004000
+#                TABLE_INTEGER_64                 0X00010000
+#                TABLE_NULL                       0X00020000
+#                VARIABLE_STREAM                  0x00040000
+
+
+
+
+#  (Please note that the TAG1 definition may have columns added in the future.
+#   Any new columns will be added to the right of the existing ones.)
+#   This file should be parsed accordingly.)
+
+# TAG1,NAME,ID,BITMASK_0,BITMASK_1,BITMASK_2,BITMASK_3,TABLE_LENGTH,STRING_WIDTH
+
+TAG1,Counter_Inputs                                    ,3    ,00000000,00000100,00000000,00000000,0    ,0   
+TAG1,MIS                                               ,5    ,00000000,00000100,00000000,00000000,0    ,0   
+TAG1,Powerup                                           ,0    ,00000000,00000100,00000000,00000000,0    ,0   
+TAG1,Scan                                              ,1    ,00000000,00000100,00000000,00000000,0    ,0   
+TAG1,Scratchpad                                        ,4    ,00000000,00000100,00000000,00000000,0    ,0   
+TAG1,Utility                                           ,2    ,00000000,00000100,00000000,00000000,0    ,0   
+TAG1,Novelis_Coater2                                   ,0    ,00000000,00000000,10000000,00000000,0    ,0   
+TAG1,CFRM_FWD_CMD                                      ,18   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_FWD_LIMIT                                    ,29   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_FWD_PB                                       ,30   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_FWD_PB_Lamp                                  ,46   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_MAN_Comp                                     ,24   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_REV_CMD                                      ,42   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_REV_LIMIT                                    ,28   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_REV_PB                                       ,31   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,CFRM_REV_PB_Lamp                                  ,45   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,E_Stop_Local                                      ,19   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,GAP_Control_Request                               ,34   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,Green_Lamp_Local                                  ,20   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,Green_Lamp_RMT                                    ,44   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,Red_Lamp_Local                                    ,22   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,Red_Lamp_RMT                                      ,43   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,RX_HEATER_CMD                                     ,47   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,Scan_Request                                      ,35   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,Shutter_Closed_Status                             ,1    ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,Shutter_CMD                                       ,14   ,10000000,00000000,00000000,00000000,0    ,0   
+TAG1,Shutter_Full_Open                                 ,48   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,Shutter_MAN_Comp                                  ,25   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,Shutter_Open_Status                               ,41   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,Shutter_RMT_DSCNT_Status                          ,26   ,40000000,00000000,00000000,00000000,0    ,0   
+TAG1,Basis_Weight                                      ,0    ,00000000,00000001,00000000,00000000,0    ,0   
+TAG1,CIU_CAB_TEMP                                      ,14   ,00000000,00000001,00000000,00000000,0    ,0   
+TAG1,DTR_Head_TEMP                                     ,15   ,00000000,00000001,00000000,00000000,0    ,0   
+TAG1,DTR_HV_Monitor                                    ,16   ,00000000,00000001,00000000,00000000,0    ,0   
+TAG1,Gauge_Actual                                      ,11   ,00000000,00000002,00000000,00000000,0    ,0   
+TAG1,Gauge_Deviation                                   ,9    ,00000000,00000002,00000000,00000000,0    ,0   
+TAG1,A1                                                ,0    ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,A2                                                ,1    ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,A3                                                ,2    ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,A4                                                ,3    ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,A5                                                ,4    ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,A6                                                ,5    ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,A7                                                ,198  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Alloy_ID                                          ,110  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Alloy_ID_Old                                      ,111  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Alloy_TGT                                         ,90   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Alloy_TGT_Old                                     ,109  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Analog_Filter_Weight                              ,256  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Bad_BKGND_Max                                     ,220  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Bad_BKGND_Min                                     ,221  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Bad_STDZ_Alarm                                    ,50   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Basis_Weight_Now                                  ,39   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Basis_Weight_Now_1                                ,9    ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Basis_Weight_Now_2                                ,41   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Basis_Weight_Now_3                                ,40   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,BW_Conv                                           ,10   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,BW_Corr                                           ,11   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,BW_Dyn_Offset                                     ,43   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,BW_KCM                                            ,44   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,BW_Spec_Gravity                                   ,12   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Coil_Avg                                          ,282  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Coil_Avg_Temp                                     ,283  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Coil_Counter                                      ,284  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Coil_Max                                          ,289  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Coil_Max_Temp                                     ,290  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Coil_Min                                          ,286  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Coil_Min_Temp                                     ,288  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,D1                                                ,13   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,D2                                                ,14   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,D3                                                ,15   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,FIVE                                              ,16   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,FOUR                                              ,18   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,FWD_Limit_Delay                                   ,279  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Gauge_Healthy                                     ,223  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Gauge_In_STDZ                                     ,224  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Gauge_Ready                                       ,222  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,GDR_Load_Alarm                                    ,105  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,HVPS_RX_Mon                                       ,276  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Loop_Counter_Sample                               ,59   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Loop_Counter_STDZ                                 ,51   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Measure_Start                                     ,280  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Measure_Stop                                      ,281  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,ON_Sheet_Request                                  ,232  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,ONE                                               ,20   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,RX_HEATER_CTRL                                    ,277  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,RX_HEATER_ON_DELAY                                ,275  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,RX_HEATER_SP                                      ,274  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Sample_Value                                      ,61   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Sample_Value_1                                    ,62   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Sample_Value_Temp                                 ,63   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Sample_Voltage                                    ,64   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Scanner_Status                                    ,21   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Scanner_Status_Manual                             ,112  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Shutter_Fault_Alarm                               ,47   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Shutter_Fault_Closed                              ,229  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Shutter_Fault_Open                                ,230  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,SSIU_Cabinet_Temp                                 ,278  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,Status_Comm_Trashcan                              ,167  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Status_Scratchpad_IN                              ,272  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Status_Scratchpad_IP                              ,84   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Status_Scratchpad_IP_N21                          ,169  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Status_Scratchpad_OP                              ,85   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Status_Scratchpad_Out                             ,273  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Status_Trashcan                                   ,70   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,STDZ_Aborted                                      ,138  ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,STDZ_Closed_Max                                   ,24   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Closed_Max_Alarm                             ,46   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,STDZ_Closed_Min                                   ,99   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Closed_Temp                                  ,52   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Closed_Volts                                 ,25   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Open_Max                                     ,100  ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Open_Min                                     ,29   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Open_Min_Alarm                               ,45   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,STDZ_Open_Temp                                    ,53   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Open_Volts                                   ,30   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,STDZ_Required                                     ,31   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,STDZ_Timer                                        ,32   ,00000000,00000000,00000000,00002000,0    ,0   
+TAG1,Temp_RX_Head                                      ,33   ,00000000,00000000,00000000,00000010,0    ,0   
+TAG1,TWELVE                                            ,66   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,ZERO                                              ,38   ,00000000,00000000,00000000,00000008,0    ,0   
+TAG1,Opto_Table_In_AB                                  ,7    ,00000000,00000000,00000000,00000200,125  ,0   
+TAG1,Opto_Table_Out_AB                                 ,8    ,00000000,00000000,00000000,00000200,125  ,0   

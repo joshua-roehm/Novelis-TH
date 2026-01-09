@@ -1,0 +1,29 @@
+: 3_0
+1 JUMP ;
+: 3_3
+1 LINE.NUM ~Basis_Weight @@ ^Basis_Weight_Now_1 @! 
+3 LINE.NUM ^A1 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* ^A2 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* F+ ^A3 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* F+ ^A4 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* F+ ^A5 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* F* F+ ^A6 @@ ^Basis_Weight_Now_1 @@ F* F+ ^A7 @@ F+ ^BW_Corr @@ F- ^Basis_Weight_Now_2 @! 
+5 LINE.NUM ^Basis_Weight_Now_2 @@ ^BW_Spec_Gravity @@ F/ ^BW_Conv @@ F* ^BW_KCM @@ F* ^BW_Dyn_Offset @@ F+ ^Basis_Weight_Now @! 
+7 LINE.NUM ^Scanner_Status @@ 2 = ^Scanner_Status @@ 1 = LOR  IF 
+8 LINE.NUM ^Basis_Weight_Now @@ ^Basis_Weight_Now_3 @! 
+9 LINE.NUM ELSE 
+10 LINE.NUM 0 I>F ^Basis_Weight_Now_3 @! 
+11 LINE.NUM THEN 
+13 LINE.NUM ~Shutter_Open_Status @@I 1 = IF 
+14 LINE.NUM ^Basis_Weight_Now @@ ^Alloy_TGT @@ F- ^Alloy_TGT @@ F/ 100 I>F F* ~Gauge_Deviation @! 
+16 LINE.NUM ^Basis_Weight_Now @@ ~Gauge_Actual @! 
+17 LINE.NUM ELSE 
+18 LINE.NUM 0 I>F ~Gauge_Deviation @! 
+19 LINE.NUM 0 I>F ~Gauge_Actual @! 
+20 LINE.NUM THEN 
+-1 JUMP ;
+: 3_8
+1 LINE.NUM 2 I>F  FDELAY 
+-2 JUMP ;
+T: T3
+DUMMY
+3_0
+3_3
+3_8
+T;
+&Counter_Inputs ' T3 SETTASK

@@ -1,0 +1,250 @@
+CREATE T.ARRAY
+&Counter_Inputs ,
+&MIS ,
+&Powerup ,
+&Scan ,
+&Scratchpad ,
+&Utility ,
+ 0 ,
+CREATE V.ARRAY
+^A1 ,
+^A2 ,
+^A3 ,
+^A4 ,
+^A5 ,
+^A6 ,
+^A7 ,
+^Alloy_ID ,
+^Alloy_ID_Old ,
+^Alloy_TGT ,
+^Alloy_TGT_Old ,
+^Analog_Filter_Weight ,
+^Bad_BKGND_Max ,
+^Bad_BKGND_Min ,
+^Bad_STDZ_Alarm ,
+^Basis_Weight_Now ,
+^Basis_Weight_Now_1 ,
+^Basis_Weight_Now_2 ,
+^Basis_Weight_Now_3 ,
+^BW_Conv ,
+^BW_Corr ,
+^BW_Dyn_Offset ,
+^BW_KCM ,
+^BW_Spec_Gravity ,
+^Coil_Avg ,
+^Coil_Avg_Temp ,
+^Coil_Counter ,
+^Coil_Max ,
+^Coil_Max_Temp ,
+^Coil_Min ,
+^Coil_Min_Temp ,
+^D1 ,
+^D2 ,
+^D3 ,
+^FIVE ,
+^FOUR ,
+^FWD_Limit_Delay ,
+^Gauge_Healthy ,
+^Gauge_In_STDZ ,
+^Gauge_Ready ,
+^GDR_Load_Alarm ,
+^HVPS_RX_Mon ,
+^Loop_Counter_Sample ,
+^Loop_Counter_STDZ ,
+^Measure_Start ,
+^Measure_Stop ,
+^ON_Sheet_Request ,
+^ONE ,
+^RX_HEATER_CTRL ,
+^RX_HEATER_ON_DELAY ,
+^RX_HEATER_SP ,
+^Sample_Value ,
+^Sample_Value_1 ,
+^Sample_Value_Temp ,
+^Sample_Voltage ,
+^Scanner_Status ,
+^Scanner_Status_Manual ,
+^Shutter_Fault_Alarm ,
+^Shutter_Fault_Closed ,
+^Shutter_Fault_Open ,
+^SSIU_Cabinet_Temp ,
+^Status_Comm_Trashcan ,
+^Status_Scratchpad_IN ,
+^Status_Scratchpad_IP ,
+^Status_Scratchpad_IP_N21 ,
+^Status_Scratchpad_OP ,
+^Status_Scratchpad_Out ,
+^Status_Trashcan ,
+^STDZ_Aborted ,
+^STDZ_Closed_Max ,
+^STDZ_Closed_Max_Alarm ,
+^STDZ_Closed_Min ,
+^STDZ_Closed_Temp ,
+^STDZ_Closed_Volts ,
+^STDZ_Open_Max ,
+^STDZ_Open_Min ,
+^STDZ_Open_Min_Alarm ,
+^STDZ_Open_Temp ,
+^STDZ_Open_Volts ,
+^STDZ_Required ,
+^Temp_RX_Head ,
+^TWELVE ,
+^ZERO ,
+*_HSV_SEMA ,
+*_HSV_TEMP ,
+ 0 ,
+CREATE TI.ARRAY
+^STDZ_Timer ,
+ 0 ,
+CREATE PTR.ARRAY
+ 0 ,
+CREATE TA.ARRAY 
+}Opto_Table_In_AB ,
+}Opto_Table_Out_AB ,
+ 0 ,
+CREATE PTRTABLE.ARRAY 
+ 0 ,
+CREATE B.ARRAY
+%Novelis_Coater2 ,
+ 0 ,
+CREATE P.ARRAY
+~CFRM_FWD_CMD ,
+~CFRM_FWD_LIMIT ,
+~CFRM_FWD_PB ,
+~CFRM_FWD_PB_Lamp ,
+~CFRM_MAN_Comp ,
+~CFRM_REV_CMD ,
+~CFRM_REV_LIMIT ,
+~CFRM_REV_PB ,
+~CFRM_REV_PB_Lamp ,
+~E_Stop_Local ,
+~GAP_Control_Request ,
+~Green_Lamp_Local ,
+~Green_Lamp_RMT ,
+~Red_Lamp_Local ,
+~Red_Lamp_RMT ,
+~RX_HEATER_CMD ,
+~Scan_Request ,
+~Shutter_Closed_Status ,
+~Shutter_CMD ,
+~Shutter_Full_Open ,
+~Shutter_MAN_Comp ,
+~Shutter_Open_Status ,
+~Shutter_RMT_DSCNT_Status ,
+~Basis_Weight ,
+~CIU_CAB_TEMP ,
+~DTR_Head_TEMP ,
+~DTR_HV_Monitor ,
+~Gauge_Actual ,
+~Gauge_Deviation ,
+ 0 ,
+CREATE PID.ARRAY
+ 0 ,
+CREATE E/R.ARRAY
+ 0 ,
+CREATE E/RGROUP.ARRAY
+ 0 ,
+: CONFIG_PORTS
+;
+: W_INIT_IO
+CONFIG_PORTS
+" %Novelis_Coater2  (1/1)" *_HSV_INIT_IO $MOVE 0 ^_HNV_INIT_IO @!
+%Novelis_Coater2 ENABLE
+ " Initializing variables" *_HSV_INIT_IO $MOVE
+0.30913061 ^A1 @!
+-8.2123346 ^A2 @!
+87.952667 ^A3 @!
+-493.97003 ^A4 @!
+1589.4335 ^A5 @!
+-3067.6843 ^A6 @!
+3477.4180 ^A7 @!
+0 ^Alloy_ID @!
+0 ^Alloy_ID_Old @!
+0.0049999999 ^Alloy_TGT @!
+0.00000000 ^Alloy_TGT_Old @!
+10.000000 ^Analog_Filter_Weight @!
+0 ^Bad_BKGND_Max @!
+0 ^Bad_BKGND_Min @!
+0 ^Bad_STDZ_Alarm @!
+0.00000000 ^Basis_Weight_Now @!
+9.9999997e-005 ^Basis_Weight_Now_1 @!
+0.00000000 ^Basis_Weight_Now_2 @!
+0.00000000 ^Basis_Weight_Now_3 @!
+3.9369999e-005 ^BW_Conv @!
+0.00000000 ^BW_Corr @!
+0.00000000 ^BW_Dyn_Offset @!
+1.0000000 ^BW_KCM @!
+2.7100000 ^BW_Spec_Gravity @!
+0.00000000 ^Coil_Avg @!
+0.00000000 ^Coil_Avg_Temp @!
+0 ^Coil_Counter @!
+0.00000000 ^Coil_Max @!
+0.00000000 ^Coil_Max_Temp @!
+0.00000000 ^Coil_Min @!
+0.00000000 ^Coil_Min_Temp @!
+-75.801201 ^D1 @!
+620.95068 ^D2 @!
+1.0000000 ^D3 @!
+5 ^FIVE @!
+4 ^FOUR @!
+0.50000000 ^FWD_Limit_Delay @!
+0 ^Gauge_Healthy @!
+0 ^Gauge_In_STDZ @!
+0 ^Gauge_Ready @!
+0 ^GDR_Load_Alarm @!
+0.00000000 ^HVPS_RX_Mon @!
+0 ^Loop_Counter_Sample @!
+0 ^Loop_Counter_STDZ @!
+0 ^Measure_Start @!
+0 ^Measure_Stop @!
+0 ^ON_Sheet_Request @!
+1 ^ONE @!
+1 ^RX_HEATER_CTRL @!
+2.0000000 ^RX_HEATER_ON_DELAY @!
+80.000000 ^RX_HEATER_SP @!
+0.00000000 ^Sample_Value @!
+0.00000000 ^Sample_Value_1 @!
+0.00000000 ^Sample_Value_Temp @!
+0.00000000 ^Sample_Voltage @!
+4 ^Scanner_Status @!
+0 ^Scanner_Status_Manual @!
+0 ^Shutter_Fault_Alarm @!
+0 ^Shutter_Fault_Closed @!
+0 ^Shutter_Fault_Open @!
+0.00000000 ^SSIU_Cabinet_Temp @!
+0 ^Status_Comm_Trashcan @!
+0 ^Status_Scratchpad_IN @!
+0 ^Status_Scratchpad_IP @!
+0 ^Status_Scratchpad_IP_N21 @!
+0 ^Status_Scratchpad_OP @!
+0 ^Status_Scratchpad_Out @!
+0 ^Status_Trashcan @!
+0 ^STDZ_Aborted @!
+0.30000001 ^STDZ_Closed_Max @!
+0 ^STDZ_Closed_Max_Alarm @!
+0.00000000 ^STDZ_Closed_Min @!
+0.00000000 ^STDZ_Closed_Temp @!
+0.011000000 ^STDZ_Closed_Volts @!
+8.6737003 ^STDZ_Open_Max @!
+7.6910000 ^STDZ_Open_Min @!
+0 ^STDZ_Open_Min_Alarm @!
+0.00000000 ^STDZ_Open_Temp @!
+7.0134001 ^STDZ_Open_Volts @!
+0 ^STDZ_Required @!
+0.0 ^STDZ_Timer SetTimer
+0.00000000 ^Temp_RX_Head @!
+12 ^TWELVE @!
+0 ^ZERO @!
+0.00000000 0 -1 }Opto_Table_In_AB InitTable
+0.00000000 0 -1 }Opto_Table_Out_AB InitTable
+ " " *_HSV_INIT_IO $MOVE
+;
+T: T_INIT_IO
+W_INIT_IO
+&Powerup START.T DROP
+T;
+&_INIT_IO ' T_INIT_IO  SETTASK
+   : _RUN
+   CLEARERRORS
+   &_INIT_IO START.T DROP
+   ;

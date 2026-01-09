@@ -1,0 +1,124 @@
+0 TASK  &_INIT_IO
+0 TASK &Counter_Inputs
+0 TASK &MIS
+0 TASK &Powerup
+0 TASK &Scan
+0 TASK &Scratchpad
+0 TASK &Utility
+0 FVAR ^A1
+0 FVAR ^A2
+0 FVAR ^A3
+0 FVAR ^A4
+0 FVAR ^A5
+0 FVAR ^A6
+0 FVAR ^A7
+0 IVAR ^Alloy_ID
+0 IVAR ^Alloy_ID_Old
+0 FVAR ^Alloy_TGT
+0 FVAR ^Alloy_TGT_Old
+0 FVAR ^Analog_Filter_Weight
+0 IVAR ^Bad_BKGND_Max
+0 IVAR ^Bad_BKGND_Min
+0 IVAR ^Bad_STDZ_Alarm
+0 FVAR ^Basis_Weight_Now
+0 FVAR ^Basis_Weight_Now_1
+0 FVAR ^Basis_Weight_Now_2
+0 FVAR ^Basis_Weight_Now_3
+0 FVAR ^BW_Conv
+0 FVAR ^BW_Corr
+0 FVAR ^BW_Dyn_Offset
+0 FVAR ^BW_KCM
+0 FVAR ^BW_Spec_Gravity
+0 FVAR ^Coil_Avg
+0 FVAR ^Coil_Avg_Temp
+0 IVAR ^Coil_Counter
+0 FVAR ^Coil_Max
+0 FVAR ^Coil_Max_Temp
+0 FVAR ^Coil_Min
+0 FVAR ^Coil_Min_Temp
+0 FVAR ^D1
+0 FVAR ^D2
+0 FVAR ^D3
+0 IVAR ^FIVE
+0 IVAR ^FOUR
+0 FVAR ^FWD_Limit_Delay
+0 IVAR ^Gauge_Healthy
+0 IVAR ^Gauge_In_STDZ
+0 IVAR ^Gauge_Ready
+0 IVAR ^GDR_Load_Alarm
+0 FVAR ^HVPS_RX_Mon
+0 IVAR ^Loop_Counter_Sample
+0 IVAR ^Loop_Counter_STDZ
+0 IVAR ^Measure_Start
+0 IVAR ^Measure_Stop
+0 IVAR ^ON_Sheet_Request
+0 IVAR ^ONE
+0 IVAR ^RX_HEATER_CTRL
+0 FVAR ^RX_HEATER_ON_DELAY
+0 FVAR ^RX_HEATER_SP
+0 FVAR ^Sample_Value
+0 FVAR ^Sample_Value_1
+0 FVAR ^Sample_Value_Temp
+0 FVAR ^Sample_Voltage
+0 IVAR ^Scanner_Status
+0 IVAR ^Scanner_Status_Manual
+0 IVAR ^Shutter_Fault_Alarm
+0 IVAR ^Shutter_Fault_Closed
+0 IVAR ^Shutter_Fault_Open
+0 FVAR ^SSIU_Cabinet_Temp
+0 IVAR ^Status_Comm_Trashcan
+0 IVAR ^Status_Scratchpad_IN
+0 IVAR ^Status_Scratchpad_IP
+0 IVAR ^Status_Scratchpad_IP_N21
+0 IVAR ^Status_Scratchpad_OP
+0 IVAR ^Status_Scratchpad_Out
+0 IVAR ^Status_Trashcan
+0 IVAR ^STDZ_Aborted
+0 FVAR ^STDZ_Closed_Max
+0 IVAR ^STDZ_Closed_Max_Alarm
+0 FVAR ^STDZ_Closed_Min
+0 FVAR ^STDZ_Closed_Temp
+0 FVAR ^STDZ_Closed_Volts
+0 FVAR ^STDZ_Open_Max
+0 FVAR ^STDZ_Open_Min
+0 IVAR ^STDZ_Open_Min_Alarm
+0 FVAR ^STDZ_Open_Temp
+0 FVAR ^STDZ_Open_Volts
+0 IVAR ^STDZ_Required
+0 UTVAR ^STDZ_Timer
+0 FVAR ^Temp_RX_Head
+0 IVAR ^TWELVE
+0 IVAR ^ZERO
+125 0 FTABLE }Opto_Table_In_AB
+125 0 FTABLE }Opto_Table_Out_AB
+
+nullM64BOARD $FFFFFFFE $FFFFFFFE 16 33024 1.000000 0.010000 0.000000 2001 $C0A8016E 0 11 BOARD.MMP %Novelis_Coater2
+16  1 SPOINT 0.0     INPUT  0  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_Closed_Status
+16  1 SPOINT 0.0     INPUT  1  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_Open_Status
+16  1 SPOINT 0.0     INPUT  2  0 %Novelis_Coater2 0 POINT.TNG ~E_Stop_Local
+16  1 SPOINT 0.0     INPUT  3  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_RMT_DSCNT_Status
+16  1 SPOINT 0.0     INPUT  4  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_MAN_Comp
+16  1 SPOINT 0.0     INPUT  5  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_MAN_Comp
+16  1 SPOINT 0.0     INPUT  6  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_LIMIT
+16  1 SPOINT 0.0     INPUT  7  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_LIMIT
+16  1 SPOINT 0.0     INPUT  8  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_PB
+16  1 SPOINT 0.0     INPUT  9  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_PB
+16  1 SPOINT 0.0     INPUT 10  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_Full_Open
+16  1 SPOINT 0.0     INPUT 14  0 %Novelis_Coater2 0 POINT.TNG ~Scan_Request
+16  1 SPOINT 0.0     INPUT 15  0 %Novelis_Coater2 0 POINT.TNG ~GAP_Control_Request
+ 4  1 SPOINT 0.0    OUTPUT  0  1 %Novelis_Coater2 0 POINT.TNG ~Shutter_CMD
+ 4  1 SPOINT 0.0    OUTPUT  1  1 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_CMD
+ 4  1 SPOINT 0.0    OUTPUT  2  1 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_CMD
+ 4  1 SPOINT 0.0    OUTPUT  3  1 %Novelis_Coater2 0 POINT.TNG ~RX_HEATER_CMD
+ 4  1 SPOINT 0.0    OUTPUT  0  4 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_PB_Lamp
+ 4  1 SPOINT 0.0    OUTPUT  1  4 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_PB_Lamp
+ 4  1 SPOINT 0.0    OUTPUT  0  5 %Novelis_Coater2 0 POINT.TNG ~Red_Lamp_Local
+ 4  1 SPOINT 0.0    OUTPUT  1  5 %Novelis_Coater2 0 POINT.TNG ~Green_Lamp_Local
+ 4  1 SPOINT 0.0    OUTPUT  2  5 %Novelis_Coater2 0 POINT.TNG ~Red_Lamp_RMT
+ 4  1 SPOINT 0.0    OUTPUT  3  5 %Novelis_Coater2 0 POINT.TNG ~Green_Lamp_RMT
+ 2  1 APOINT  -10.0000 12  0  6 %Novelis_Coater2 0 POINT.TNG ~Basis_Weight
+ 4  1 APOINT  -10.0000 12  0  7 %Novelis_Coater2 0 POINT.TNG ~DTR_HV_Monitor
+ 2  1 APOINT    0.0000 167  0  8 %Novelis_Coater2 0 POINT.TNG ~Gauge_Deviation
+ 2  1 APOINT    0.0000 167  1  8 %Novelis_Coater2 0 POINT.TNG ~Gauge_Actual
+ 2  1 APOINT  -40.0000 4  0 11 %Novelis_Coater2 0 POINT.TNG ~CIU_CAB_TEMP
+ 2  1 APOINT  -40.0000 4  1 11 %Novelis_Coater2 0 POINT.TNG ~DTR_Head_TEMP

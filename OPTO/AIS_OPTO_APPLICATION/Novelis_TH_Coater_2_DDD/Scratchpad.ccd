@@ -1,0 +1,59 @@
+: 4_0
+0 JUMP ;
+: 4_69
+
+1 LINE.NUM
+  %Novelis_Coater2 
+  125  
+  0  
+  0  
+  }Opto_Table_Out_AB   IO.SP.T.WRITE
+  ^Status_Scratchpad_Out @! 
+
+2 LINE.NUM
+  %Novelis_Coater2 
+  125  
+  126  
+  0  
+  }Opto_Table_In_AB   IO.SP.READ
+  ^Status_Scratchpad_IN @! 
+0 JUMP ;
+: 4_70
+
+1 LINE.NUM
+  500    DELAY
+0 JUMP ;
+: 4_71
+1 LINE.NUM ^Gauge_Healthy @@F 1 }Opto_Table_Out_AB TABLE! 
+2 LINE.NUM ^Gauge_Ready @@F 2 }Opto_Table_Out_AB TABLE! 
+3 LINE.NUM ^STDZ_Closed_Volts @@ 3 }Opto_Table_Out_AB TABLE! 
+4 LINE.NUM ^STDZ_Open_Volts @@ 4 }Opto_Table_Out_AB TABLE! 
+5 LINE.NUM ^Basis_Weight_Now @@ 5 }Opto_Table_Out_AB TABLE! 
+6 LINE.NUM ^Scanner_Status @@F 6 }Opto_Table_Out_AB TABLE! 
+7 LINE.NUM ^Shutter_Fault_Alarm @@F 7 }Opto_Table_Out_AB TABLE! 
+8 LINE.NUM ^STDZ_Aborted @@F 8 }Opto_Table_Out_AB TABLE! 
+9 LINE.NUM ^Bad_STDZ_Alarm @@F 9 }Opto_Table_Out_AB TABLE! 
+10 LINE.NUM ^Gauge_In_STDZ @@F 10 }Opto_Table_Out_AB TABLE! 
+11 LINE.NUM ~Gauge_Deviation @@ 11 }Opto_Table_Out_AB TABLE! 
+12 LINE.NUM ~Gauge_Actual @@ 12 }Opto_Table_Out_AB TABLE! 
+13 LINE.NUM ^Temp_RX_Head @@ 13 }Opto_Table_Out_AB TABLE! 
+14 LINE.NUM ^Alloy_TGT @@ 14 }Opto_Table_Out_AB TABLE! 
+16 LINE.NUM ^Shutter_Fault_Alarm @@ 0 = ^Shutter_Fault_Alarm @@ 0 = LAND  ^Bad_STDZ_Alarm @@ 0 = LAND  IF 
+17 LINE.NUM 1 ^Gauge_Healthy @! 
+18 LINE.NUM ELSE 
+19 LINE.NUM 0 ^Gauge_Healthy @! 
+20 LINE.NUM THEN 
+22 LINE.NUM ^Gauge_Healthy @@ 1 = ~Shutter_CMD @@I 1 = LAND  ^Gauge_In_STDZ @@ 0 = LAND  IF 
+23 LINE.NUM 1 ^Gauge_Ready @! 
+24 LINE.NUM ELSE 
+25 LINE.NUM 0 ^Gauge_Ready @! 
+26 LINE.NUM THEN 
+-3 JUMP ;
+T: T4
+DUMMY
+4_0
+4_69
+4_70
+4_71
+T;
+&Scratchpad ' T4 SETTASK

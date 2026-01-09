@@ -1,0 +1,63 @@
+: 5_0
+5 JUMP ;
+: 5_2
+
+1 LINE.NUM
+  1.0    FDELAY
+4 JUMP ;
+: 5_6
+1 LINE.NUM 0 ^Coil_Counter @! 
+2 LINE.NUM 0 I>F ^Coil_Avg_Temp @! 
+3 LINE.NUM 0 I>F ^Coil_Max_Temp @! 
+4 LINE.NUM 1000 I>F ^Coil_Min_Temp @! 
+4 JUMP ;
+: 5_10
+1 LINE.NUM ^Coil_Avg_Temp @@ ^Coil_Counter @@F F/ ^Coil_Avg @! 
+2 LINE.NUM ^Coil_Max_Temp @@ ^Coil_Max @! 
+3 LINE.NUM ^Coil_Min_Temp @@ ^Coil_Min @! 
+-3 JUMP ;
+: 5_13
+1 LINE.NUM ^Coil_Counter @@ 1 +  ^Coil_Counter @! 
+3 LINE.NUM ^Coil_Avg_Temp @@ ^Basis_Weight_Now @@ F+ ^Coil_Avg_Temp @! 
+5 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Max_Temp @@ F> IF 
+5 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Max_Temp @! 
+5 LINE.NUM ELSE 
+5 LINE.NUM THEN 
+6 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Min_Temp @@ F< IF 
+6 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Min_Temp @! 
+6 LINE.NUM ELSE 
+6 LINE.NUM THEN 
+0 JUMP ;
+: 5_14
+
+1 LINE.NUM
+  1.0    FDELAY
+1 JUMP ;
+: 5_1
+TRUE
+
+1 LINE.NUM
+  ^Measure_Start @@ 
+  1    =
+LAND
+IF -5 ELSE -6 THEN JUMP ;
+: 5_8
+TRUE
+
+1 LINE.NUM
+  ^Measure_Start @@ 
+  1    =
+LAND
+IF -4 ELSE -5 THEN JUMP ;
+T: T5
+DUMMY
+5_0
+5_2
+5_6
+5_10
+5_13
+5_14
+5_1
+5_8
+T;
+&MIS ' T5 SETTASK

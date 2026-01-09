@@ -1,0 +1,1385 @@
+_END NEW $$$.RUN
+: FILENAME  ." Novelis_TH_Coater_2_DDD " ;
+1 0 $VAR *_HSV_SEMA 
+1024 0 $VAR *_HSV_TEMP 
+200 0 $VAR *_HSV_INIT_IO 
+0 IVAR ^_HNV_INIT_IO 
+0 TASK  &_INIT_IO
+0 TASK &Counter_Inputs
+0 TASK &MIS
+0 TASK &Powerup
+0 TASK &Scan
+0 TASK &Scratchpad
+0 TASK &Utility
+0 FVAR ^A1
+0 FVAR ^A2
+0 FVAR ^A3
+0 FVAR ^A4
+0 FVAR ^A5
+0 FVAR ^A6
+0 FVAR ^A7
+0 IVAR ^Alloy_ID
+0 IVAR ^Alloy_ID_Old
+0 FVAR ^Alloy_TGT
+0 FVAR ^Alloy_TGT_Old
+0 FVAR ^Analog_Filter_Weight
+0 IVAR ^Bad_BKGND_Max
+0 IVAR ^Bad_BKGND_Min
+0 IVAR ^Bad_STDZ_Alarm
+0 FVAR ^Basis_Weight_Now
+0 FVAR ^Basis_Weight_Now_1
+0 FVAR ^Basis_Weight_Now_2
+0 FVAR ^Basis_Weight_Now_3
+0 FVAR ^BW_Conv
+0 FVAR ^BW_Corr
+0 FVAR ^BW_Dyn_Offset
+0 FVAR ^BW_KCM
+0 FVAR ^BW_Spec_Gravity
+0 FVAR ^Coil_Avg
+0 FVAR ^Coil_Avg_Temp
+0 IVAR ^Coil_Counter
+0 FVAR ^Coil_Max
+0 FVAR ^Coil_Max_Temp
+0 FVAR ^Coil_Min
+0 FVAR ^Coil_Min_Temp
+0 FVAR ^D1
+0 FVAR ^D2
+0 FVAR ^D3
+0 IVAR ^FIVE
+0 IVAR ^FOUR
+0 FVAR ^FWD_Limit_Delay
+0 IVAR ^Gauge_Healthy
+0 IVAR ^Gauge_In_STDZ
+0 IVAR ^Gauge_Ready
+0 IVAR ^GDR_Load_Alarm
+0 FVAR ^HVPS_RX_Mon
+0 IVAR ^Loop_Counter_Sample
+0 IVAR ^Loop_Counter_STDZ
+0 IVAR ^Measure_Start
+0 IVAR ^Measure_Stop
+0 IVAR ^ON_Sheet_Request
+0 IVAR ^ONE
+0 IVAR ^RX_HEATER_CTRL
+0 FVAR ^RX_HEATER_ON_DELAY
+0 FVAR ^RX_HEATER_SP
+0 FVAR ^Sample_Value
+0 FVAR ^Sample_Value_1
+0 FVAR ^Sample_Value_Temp
+0 FVAR ^Sample_Voltage
+0 IVAR ^Scanner_Status
+0 IVAR ^Scanner_Status_Manual
+0 IVAR ^Shutter_Fault_Alarm
+0 IVAR ^Shutter_Fault_Closed
+0 IVAR ^Shutter_Fault_Open
+0 FVAR ^SSIU_Cabinet_Temp
+0 IVAR ^Status_Comm_Trashcan
+0 IVAR ^Status_Scratchpad_IN
+0 IVAR ^Status_Scratchpad_IP
+0 IVAR ^Status_Scratchpad_IP_N21
+0 IVAR ^Status_Scratchpad_OP
+0 IVAR ^Status_Scratchpad_Out
+0 IVAR ^Status_Trashcan
+0 IVAR ^STDZ_Aborted
+0 FVAR ^STDZ_Closed_Max
+0 IVAR ^STDZ_Closed_Max_Alarm
+0 FVAR ^STDZ_Closed_Min
+0 FVAR ^STDZ_Closed_Temp
+0 FVAR ^STDZ_Closed_Volts
+0 FVAR ^STDZ_Open_Max
+0 FVAR ^STDZ_Open_Min
+0 IVAR ^STDZ_Open_Min_Alarm
+0 FVAR ^STDZ_Open_Temp
+0 FVAR ^STDZ_Open_Volts
+0 IVAR ^STDZ_Required
+0 UTVAR ^STDZ_Timer
+0 FVAR ^Temp_RX_Head
+0 IVAR ^TWELVE
+0 IVAR ^ZERO
+125 0 FTABLE }Opto_Table_In_AB
+125 0 FTABLE }Opto_Table_Out_AB
+
+nullM64BOARD $FFFFFFFE $FFFFFFFE 16 33024 1.000000 0.010000 0.000000 2001 $C0A8016E 0 11 BOARD.MMP %Novelis_Coater2
+16  1 SPOINT 0.0     INPUT  0  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_Closed_Status
+16  1 SPOINT 0.0     INPUT  1  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_Open_Status
+16  1 SPOINT 0.0     INPUT  2  0 %Novelis_Coater2 0 POINT.TNG ~E_Stop_Local
+16  1 SPOINT 0.0     INPUT  3  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_RMT_DSCNT_Status
+16  1 SPOINT 0.0     INPUT  4  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_MAN_Comp
+16  1 SPOINT 0.0     INPUT  5  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_MAN_Comp
+16  1 SPOINT 0.0     INPUT  6  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_LIMIT
+16  1 SPOINT 0.0     INPUT  7  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_LIMIT
+16  1 SPOINT 0.0     INPUT  8  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_PB
+16  1 SPOINT 0.0     INPUT  9  0 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_PB
+16  1 SPOINT 0.0     INPUT 10  0 %Novelis_Coater2 0 POINT.TNG ~Shutter_Full_Open
+16  1 SPOINT 0.0     INPUT 14  0 %Novelis_Coater2 0 POINT.TNG ~Scan_Request
+16  1 SPOINT 0.0     INPUT 15  0 %Novelis_Coater2 0 POINT.TNG ~GAP_Control_Request
+ 4  1 SPOINT 0.0    OUTPUT  0  1 %Novelis_Coater2 0 POINT.TNG ~Shutter_CMD
+ 4  1 SPOINT 0.0    OUTPUT  1  1 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_CMD
+ 4  1 SPOINT 0.0    OUTPUT  2  1 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_CMD
+ 4  1 SPOINT 0.0    OUTPUT  3  1 %Novelis_Coater2 0 POINT.TNG ~RX_HEATER_CMD
+ 4  1 SPOINT 0.0    OUTPUT  0  4 %Novelis_Coater2 0 POINT.TNG ~CFRM_REV_PB_Lamp
+ 4  1 SPOINT 0.0    OUTPUT  1  4 %Novelis_Coater2 0 POINT.TNG ~CFRM_FWD_PB_Lamp
+ 4  1 SPOINT 0.0    OUTPUT  0  5 %Novelis_Coater2 0 POINT.TNG ~Red_Lamp_Local
+ 4  1 SPOINT 0.0    OUTPUT  1  5 %Novelis_Coater2 0 POINT.TNG ~Green_Lamp_Local
+ 4  1 SPOINT 0.0    OUTPUT  2  5 %Novelis_Coater2 0 POINT.TNG ~Red_Lamp_RMT
+ 4  1 SPOINT 0.0    OUTPUT  3  5 %Novelis_Coater2 0 POINT.TNG ~Green_Lamp_RMT
+ 2  1 APOINT  -10.0000 12  0  6 %Novelis_Coater2 0 POINT.TNG ~Basis_Weight
+ 4  1 APOINT  -10.0000 12  0  7 %Novelis_Coater2 0 POINT.TNG ~DTR_HV_Monitor
+ 2  1 APOINT    0.0000 167  0  8 %Novelis_Coater2 0 POINT.TNG ~Gauge_Deviation
+ 2  1 APOINT    0.0000 167  1  8 %Novelis_Coater2 0 POINT.TNG ~Gauge_Actual
+ 2  1 APOINT  -40.0000 4  0 11 %Novelis_Coater2 0 POINT.TNG ~CIU_CAB_TEMP
+ 2  1 APOINT  -40.0000 4  1 11 %Novelis_Coater2 0 POINT.TNG ~DTR_Head_TEMP
+: 3_0
+1 JUMP ;
+: 3_3
+1 LINE.NUM ~Basis_Weight @@ ^Basis_Weight_Now_1 @! 
+3 LINE.NUM ^A1 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* ^A2 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* F+ ^A3 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* F+ ^A4 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* ^Basis_Weight_Now_1 @@ F* F* F+ ^A5 @@ ^Basis_Weight_Now_1 @@ ^Basis_Weight_Now_1 @@ F* F* F+ ^A6 @@ ^Basis_Weight_Now_1 @@ F* F+ ^A7 @@ F+ ^BW_Corr @@ F- ^Basis_Weight_Now_2 @! 
+5 LINE.NUM ^Basis_Weight_Now_2 @@ ^BW_Spec_Gravity @@ F/ ^BW_Conv @@ F* ^BW_KCM @@ F* ^BW_Dyn_Offset @@ F+ ^Basis_Weight_Now @! 
+7 LINE.NUM ^Scanner_Status @@ 2 = ^Scanner_Status @@ 1 = LOR  IF 
+8 LINE.NUM ^Basis_Weight_Now @@ ^Basis_Weight_Now_3 @! 
+9 LINE.NUM ELSE 
+10 LINE.NUM 0 I>F ^Basis_Weight_Now_3 @! 
+11 LINE.NUM THEN 
+13 LINE.NUM ~Shutter_Open_Status @@I 1 = IF 
+14 LINE.NUM ^Basis_Weight_Now @@ ^Alloy_TGT @@ F- ^Alloy_TGT @@ F/ 100 I>F F* ~Gauge_Deviation @! 
+16 LINE.NUM ^Basis_Weight_Now @@ ~Gauge_Actual @! 
+17 LINE.NUM ELSE 
+18 LINE.NUM 0 I>F ~Gauge_Deviation @! 
+19 LINE.NUM 0 I>F ~Gauge_Actual @! 
+20 LINE.NUM THEN 
+-1 JUMP ;
+: 3_8
+1 LINE.NUM 2 I>F  FDELAY 
+-2 JUMP ;
+T: T3
+DUMMY
+3_0
+3_3
+3_8
+T;
+&Counter_Inputs ' T3 SETTASK
+: 5_0
+5 JUMP ;
+: 5_2
+
+1 LINE.NUM
+  1.0    FDELAY
+4 JUMP ;
+: 5_6
+1 LINE.NUM 0 ^Coil_Counter @! 
+2 LINE.NUM 0 I>F ^Coil_Avg_Temp @! 
+3 LINE.NUM 0 I>F ^Coil_Max_Temp @! 
+4 LINE.NUM 1000 I>F ^Coil_Min_Temp @! 
+4 JUMP ;
+: 5_10
+1 LINE.NUM ^Coil_Avg_Temp @@ ^Coil_Counter @@F F/ ^Coil_Avg @! 
+2 LINE.NUM ^Coil_Max_Temp @@ ^Coil_Max @! 
+3 LINE.NUM ^Coil_Min_Temp @@ ^Coil_Min @! 
+-3 JUMP ;
+: 5_13
+1 LINE.NUM ^Coil_Counter @@ 1 +  ^Coil_Counter @! 
+3 LINE.NUM ^Coil_Avg_Temp @@ ^Basis_Weight_Now @@ F+ ^Coil_Avg_Temp @! 
+5 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Max_Temp @@ F> IF 
+5 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Max_Temp @! 
+5 LINE.NUM ELSE 
+5 LINE.NUM THEN 
+6 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Min_Temp @@ F< IF 
+6 LINE.NUM ^Basis_Weight_Now @@ ^Coil_Min_Temp @! 
+6 LINE.NUM ELSE 
+6 LINE.NUM THEN 
+0 JUMP ;
+: 5_14
+
+1 LINE.NUM
+  1.0    FDELAY
+1 JUMP ;
+: 5_1
+TRUE
+
+1 LINE.NUM
+  ^Measure_Start @@ 
+  1    =
+LAND
+IF -5 ELSE -6 THEN JUMP ;
+: 5_8
+TRUE
+
+1 LINE.NUM
+  ^Measure_Start @@ 
+  1    =
+LAND
+IF -4 ELSE -5 THEN JUMP ;
+T: T5
+DUMMY
+5_0
+5_2
+5_6
+5_10
+5_13
+5_14
+5_1
+5_8
+T;
+&MIS ' T5 SETTASK
+: 0_0
+0 JUMP ;
+: 0_1
+
+1 LINE.NUM
+  &Scratchpad   START.T
+  ^Status_Trashcan @! 
+
+2 LINE.NUM
+  &Counter_Inputs   START.T
+  ^Status_Trashcan @! 
+
+3 LINE.NUM
+  &Scan   START.T
+  ^Status_Trashcan @! 
+
+4 LINE.NUM
+  &Utility   START.T
+  ^Status_Trashcan @! 
+
+5 LINE.NUM
+  &MIS   START.T
+  ^Status_Trashcan @! 
+0 JUMP ;
+T: T0
+DUMMY
+0_0
+0_1
+T;
+&Powerup ' T0 SETTASK
+: 1_0
+5 JUMP ;
+: 1_3
+
+1 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+
+2 LINE.NUM
+  ~Shutter_CMD   OFF
+15 JUMP ;
+: 1_7
+
+1 LINE.NUM
+  4    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  2.0    FDELAY
+
+3 LINE.NUM
+  1    ABS
+  ^Bad_STDZ_Alarm @! 
+1 JUMP ;
+: 1_16
+
+1 LINE.NUM
+  ^FIVE @@   ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1    ABS
+  ^Gauge_In_STDZ @! 
+
+3 LINE.NUM
+  0    ABS
+  ^STDZ_Aborted @! 
+
+4 LINE.NUM
+  0    ABS
+  ^Bad_STDZ_Alarm @! 
+28 JUMP ;
+: 1_24
+0 JUMP ;
+: 1_53
+
+1 LINE.NUM
+  50    DELAY
+55 JUMP ;
+: 1_55
+
+1 LINE.NUM
+  1    ABS
+  ^STDZ_Required @! 
+-2 JUMP ;
+: 1_72
+
+1 LINE.NUM
+  ~Shutter_CMD   OFF
+
+2 LINE.NUM
+  0    ABS
+  ^Gauge_In_STDZ @! 
+-6 JUMP ;
+: 1_111
+1 LINE.NUM 0 I>F ^Sample_Value_Temp @! 
+2 LINE.NUM 1 ^Loop_Counter_Sample @! 
+4 LINE.NUM BEGIN ^Loop_Counter_Sample @@ 2500 <= ^Scanner_Status @@ 12 = LAND  WHILE 
+5 LINE.NUM ^Basis_Weight_Now_1 @@ ^Sample_Value_Temp @@ F+ ^Sample_Value_Temp @! 
+6 LINE.NUM ^Loop_Counter_Sample  1+@! 
+7 LINE.NUM 2  DELAY 
+8 LINE.NUM REPEAT 
+10 LINE.NUM ^Scanner_Status @@ 12 = IF 
+11 LINE.NUM ^Sample_Value_Temp @@ 2500 I>F F/ ^Sample_Voltage @! 
+13 LINE.NUM ^A1 @@ ^Sample_Voltage @@ ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* F* ^A2 @@ ^Sample_Voltage @@ ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* F* F+ ^A3 @@ ^Sample_Voltage @@ ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* F* F+ ^A4 @@ ^Sample_Voltage @@ ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* F* F+ ^A5 @@ ^Sample_Voltage @@ F* ^Sample_Voltage @@ F* F+ ^A6 @@ ^Sample_Voltage @@ F* F+ ^A7 @@ F+ ^BW_Corr @@ F- ^Sample_Value_1 @! 
+15 LINE.NUM ^Sample_Value_1 @@ ^BW_Spec_Gravity @@ F/ ^BW_Conv @@ F* ^BW_KCM @@ F* ^BW_Dyn_Offset @@ F+ ^Sample_Value @! 
+16 LINE.NUM ELSE 
+16 LINE.NUM THEN 
+49 JUMP ;
+: 1_113
+
+1 LINE.NUM
+  ~Shutter_CMD   OFF
+0 JUMP ;
+: 1_116
+-6 JUMP ;
+: 1_117
+
+1 LINE.NUM
+  ~Shutter_CMD   ON
+
+2 LINE.NUM
+  2.0    FDELAY
+48 JUMP ;
+: 1_120
+
+1 LINE.NUM
+  1    ABS
+  ^Shutter_Fault_Alarm @! 
+
+2 LINE.NUM
+  3    ABS
+  ^Scanner_Status @! 
+
+3 LINE.NUM
+  ~Shutter_CMD   OFF
+-3 JUMP ;
+: 1_124
+1 JUMP ;
+: 1_125
+
+1 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+-2 JUMP ;
+: 1_128
+
+1 LINE.NUM
+  ^TWELVE @@   ABS
+  ^Scanner_Status @! 
+-5 JUMP ;
+: 1_135
+
+1 LINE.NUM
+  4    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  ~Shutter_CMD   OFF
+-7 JUMP ;
+: 1_140
+-15 JUMP ;
+: 1_144
+23 JUMP ;
+: 1_145
+-2 JUMP ;
+: 1_146
+
+1 LINE.NUM
+  ~Shutter_CMD   OFF
+
+2 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+-2 JUMP ;
+: 1_169
+14 JUMP ;
+: 1_202
+-18 JUMP ;
+: 1_209
+-3 JUMP ;
+: 1_210
+
+1 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+
+2 LINE.NUM
+  ~Shutter_CMD   ON
+-2 JUMP ;
+: 1_214
+
+1 LINE.NUM
+  ~Shutter_CMD   OFF
+
+2 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+0 JUMP ;
+: 1_215
+-9 JUMP ;
+: 1_238
+
+1 LINE.NUM
+  ~Shutter_CMD   OFF
+
+2 LINE.NUM
+  4    ABS
+  ^Scanner_Status @! 
+
+3 LINE.NUM
+  0    ABS
+  ^Gauge_In_STDZ @! 
+
+4 LINE.NUM
+  0    ABS
+  ^STDZ_Required @! 
+-6 JUMP ;
+: 1_247
+
+1 LINE.NUM
+  1    ABS
+  ^STDZ_Aborted @! 
+
+2 LINE.NUM
+  4    ABS
+  ^Scanner_Status @! 
+
+3 LINE.NUM
+  0    ABS
+  ^Gauge_In_STDZ @! 
+-25 JUMP ;
+: 1_316
+
+1 LINE.NUM
+  ^FIVE @@   ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1    ABS
+  ^Gauge_In_STDZ @! 
+
+3 LINE.NUM
+  0    ABS
+  ^STDZ_Aborted @! 
+
+4 LINE.NUM
+  0    ABS
+  ^Bad_STDZ_Alarm @! 
+2 JUMP ;
+: 1_326
+-2 JUMP ;
+: 1_328
+
+1 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+
+2 LINE.NUM
+  ~Shutter_CMD   OFF
+-2 JUMP ;
+: 1_369
+1 LINE.NUM 1 ^Loop_Counter_STDZ @! 
+2 LINE.NUM 0 I>F ^STDZ_Closed_Temp @! 
+4 LINE.NUM BEGIN ^Loop_Counter_STDZ @@ 1000 <= ^Scanner_Status @@ 5 = LAND  WHILE 
+5 LINE.NUM ^Basis_Weight_Now_1 @@ ^STDZ_Closed_Temp @@ F+ ^STDZ_Closed_Temp @! 
+6 LINE.NUM ^Loop_Counter_STDZ  1+@! 
+7 LINE.NUM 1  DELAY 
+8 LINE.NUM REPEAT 
+10 LINE.NUM ^Scanner_Status @@ 5 = IF 
+12 LINE.NUM ^STDZ_Closed_Temp @@ 1000 I>F F/ ^STDZ_Closed_Volts @! 
+13 LINE.NUM ELSE 
+14 LINE.NUM THEN 
+20 JUMP ;
+: 1_374
+3 LINE.NUM 1 ^Loop_Counter_STDZ @! 
+4 LINE.NUM 0 I>F ^STDZ_Open_Temp @! 
+6 LINE.NUM BEGIN ^Loop_Counter_STDZ @@ 2500 <= ^Scanner_Status @@ 5 = LAND  WHILE 
+7 LINE.NUM ^Basis_Weight_Now_1 @@ ^STDZ_Open_Temp @@ F+ ^STDZ_Open_Temp @! 
+8 LINE.NUM ^Loop_Counter_STDZ  1+@! 
+9 LINE.NUM 2  DELAY 
+10 LINE.NUM REPEAT 
+12 LINE.NUM ^Scanner_Status @@ 5 = IF 
+14 LINE.NUM ^STDZ_Open_Temp @@ 2500 I>F F/ ^STDZ_Open_Volts @! 
+16 LINE.NUM ^A1 @@ ^STDZ_Open_Volts @@ ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* F* ^A2 @@ ^STDZ_Open_Volts @@ ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* F* F+ ^A3 @@ ^STDZ_Open_Volts @@ ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* F* F+ ^A4 @@ ^STDZ_Open_Volts @@ ^STDZ_Open_Volts @@ F* ^STDZ_Open_Volts @@ F* F* F+ ^A5 @@ ^STDZ_Open_Volts @@ ^STDZ_Open_Volts @@ F* F* F+ ^A6 @@ ^STDZ_Open_Volts @@ F* F+ ^A7 @@ F+ ^BW_Corr @! 
+17 LINE.NUM ELSE 
+17 LINE.NUM THEN 
+-7 JUMP ;
+: 1_487
+-30 JUMP ;
+: 1_510
+
+1 LINE.NUM
+  50    DELAY
+36 JUMP ;
+: 1_517
+
+1 LINE.NUM
+  1.0    FDELAY
+31 JUMP ;
+: 1_518
+-33 JUMP ;
+: 1_528
+
+1 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+
+2 LINE.NUM
+  3    ABS
+  ^Scanner_Status @! 
+24 JUMP ;
+: 1_545
+
+1 LINE.NUM
+  0    ABS
+  ^Shutter_Fault_Alarm @! 
+-32 JUMP ;
+: 1_548
+
+1 LINE.NUM
+  ~Shutter_CMD   ON
+
+2 LINE.NUM
+  3.0    FDELAY
+11 JUMP ;
+: 1_558
+
+1 LINE.NUM
+  1    ABS
+  ^Shutter_Fault_Alarm @! 
+
+2 LINE.NUM
+  ~Shutter_CMD   OFF
+
+3 LINE.NUM
+  4    ABS
+  ^Scanner_Status @! 
+
+4 LINE.NUM
+  0    ABS
+  ^Gauge_In_STDZ @! 
+
+5 LINE.NUM
+  1    ABS
+  ^Bad_STDZ_Alarm @! 
+-38 JUMP ;
+: 1_566
+
+1 LINE.NUM
+  1.0    FDELAY
+24 JUMP ;
+: 1_575
+-39 JUMP ;
+: 1_577
+
+1 LINE.NUM
+  4    ABS
+  ^Scanner_Status @! 
+0 JUMP ;
+: 1_578
+-41 JUMP ;
+: 1_583
+
+1 LINE.NUM
+  ~Shutter_CMD   OFF
+-2 JUMP ;
+: 1_591
+
+1 LINE.NUM
+  2    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1.0    FDELAY
+0 JUMP ;
+: 1_594
+
+1 LINE.NUM
+  50    DELAY
+17 JUMP ;
+: 1_606
+
+1 LINE.NUM
+  1    ABS
+  ^Shutter_Fault_Alarm @! 
+
+2 LINE.NUM
+  3    ABS
+  ^Scanner_Status @! 
+-16 JUMP ;
+: 1_609
+
+1 LINE.NUM
+  2.0    FDELAY
+-17 JUMP ;
+: 1_612
+
+1 LINE.NUM
+  ^FWD_Limit_Delay @@   FDELAY
+-5 JUMP ;
+: 1_11
+TRUE
+
+1 LINE.NUM
+  ~Shutter_Closed_Status   ?OFF
+LAND
+IF -20 ELSE -12 THEN JUMP ;
+: 1_15
+TRUE
+
+1 LINE.NUM
+  ^STDZ_Closed_Volts @@ 
+  ^STDZ_Closed_Max @@   F<=
+LAND
+IF 0 ELSE -47 THEN JUMP ;
+: 1_20
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  ^FIVE @@   =
+LAND
+IF -15 ELSE -27 THEN JUMP ;
+: 1_48
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  3    =
+LAND
+IF -36 ELSE 6 THEN JUMP ;
+: 1_49
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  11    =
+LAND
+IF -43 ELSE -2 THEN JUMP ;
+: 1_50
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  15    =
+LAND
+IF 11 ELSE 5 THEN JUMP ;
+: 1_110
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  ^TWELVE @@   =
+LAND
+IF -43 ELSE -50 THEN JUMP ;
+: 1_115
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  ^TWELVE @@   =
+LAND
+IF -21 ELSE -51 THEN JUMP ;
+: 1_118
+TRUE
+
+1 LINE.NUM
+  ~Shutter_Closed_Status   ?OFF
+LAND
+IF -2 ELSE -49 THEN JUMP ;
+: 1_211
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LAND
+IF -38 ELSE -5 THEN JUMP ;
+: 1_216
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  24    =
+LAND
+IF -38 ELSE -58 THEN JUMP ;
+: 1_327
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  10    =
+LAND
+IF 6 ELSE -8 THEN JUMP ;
+: 1_484
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LAND
+IF -30 ELSE -15 THEN JUMP ;
+: 1_493
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  3    =
+LAND
+IF 5 ELSE -23 THEN JUMP ;
+: 1_498
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  2    =
+LAND
+IF 6 ELSE -33 THEN JUMP ;
+: 1_500
+FALSE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LOR
+IF -31 ELSE -3 THEN JUMP ;
+: 1_513
+TRUE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LAND
+IF 3 ELSE -23 THEN JUMP ;
+: 1_522
+TRUE
+
+1 LINE.NUM
+  ~CFRM_REV_LIMIT   ?ON
+LAND
+IF -69 ELSE -32 THEN JUMP ;
+: 1_523
+TRUE
+
+1 LINE.NUM
+  ~CFRM_REV_LIMIT   ?ON
+LAND
+IF -40 ELSE -33 THEN JUMP ;
+: 1_569
+TRUE
+
+1 LINE.NUM
+  ~CFRM_REV_LIMIT   ?ON
+LAND
+IF -28 ELSE -5 THEN JUMP ;
+: 1_586
+TRUE
+
+1 LINE.NUM
+  ~CFRM_FWD_LIMIT   ?ON
+LAND
+IF -22 ELSE -9 THEN JUMP ;
+: 1_602
+TRUE
+
+1 LINE.NUM
+  ~Shutter_Open_Status   ?ON
+LAND
+IF -26 ELSE -25 THEN JUMP ;
+T: T1
+DUMMY
+1_0
+1_3
+1_7
+1_16
+1_24
+1_53
+1_55
+1_72
+1_111
+1_113
+1_116
+1_117
+1_120
+1_124
+1_125
+1_128
+1_135
+1_140
+1_144
+1_145
+1_146
+1_169
+1_202
+1_209
+1_210
+1_214
+1_215
+1_238
+1_247
+1_316
+1_326
+1_328
+1_369
+1_374
+1_487
+1_510
+1_517
+1_518
+1_528
+1_545
+1_548
+1_558
+1_566
+1_575
+1_577
+1_578
+1_583
+1_591
+1_594
+1_606
+1_609
+1_612
+1_11
+1_15
+1_20
+1_48
+1_49
+1_50
+1_110
+1_115
+1_118
+1_211
+1_216
+1_327
+1_484
+1_493
+1_498
+1_500
+1_513
+1_522
+1_523
+1_569
+1_586
+1_602
+T;
+&Scan ' T1 SETTASK
+: 4_0
+0 JUMP ;
+: 4_69
+
+1 LINE.NUM
+  %Novelis_Coater2 
+  125  
+  0  
+  0  
+  }Opto_Table_Out_AB   IO.SP.T.WRITE
+  ^Status_Scratchpad_Out @! 
+
+2 LINE.NUM
+  %Novelis_Coater2 
+  125  
+  126  
+  0  
+  }Opto_Table_In_AB   IO.SP.READ
+  ^Status_Scratchpad_IN @! 
+0 JUMP ;
+: 4_70
+
+1 LINE.NUM
+  500    DELAY
+0 JUMP ;
+: 4_71
+1 LINE.NUM ^Gauge_Healthy @@F 1 }Opto_Table_Out_AB TABLE! 
+2 LINE.NUM ^Gauge_Ready @@F 2 }Opto_Table_Out_AB TABLE! 
+3 LINE.NUM ^STDZ_Closed_Volts @@ 3 }Opto_Table_Out_AB TABLE! 
+4 LINE.NUM ^STDZ_Open_Volts @@ 4 }Opto_Table_Out_AB TABLE! 
+5 LINE.NUM ^Basis_Weight_Now @@ 5 }Opto_Table_Out_AB TABLE! 
+6 LINE.NUM ^Scanner_Status @@F 6 }Opto_Table_Out_AB TABLE! 
+7 LINE.NUM ^Shutter_Fault_Alarm @@F 7 }Opto_Table_Out_AB TABLE! 
+8 LINE.NUM ^STDZ_Aborted @@F 8 }Opto_Table_Out_AB TABLE! 
+9 LINE.NUM ^Bad_STDZ_Alarm @@F 9 }Opto_Table_Out_AB TABLE! 
+10 LINE.NUM ^Gauge_In_STDZ @@F 10 }Opto_Table_Out_AB TABLE! 
+11 LINE.NUM ~Gauge_Deviation @@ 11 }Opto_Table_Out_AB TABLE! 
+12 LINE.NUM ~Gauge_Actual @@ 12 }Opto_Table_Out_AB TABLE! 
+13 LINE.NUM ^Temp_RX_Head @@ 13 }Opto_Table_Out_AB TABLE! 
+14 LINE.NUM ^Alloy_TGT @@ 14 }Opto_Table_Out_AB TABLE! 
+16 LINE.NUM ^Shutter_Fault_Alarm @@ 0 = ^Shutter_Fault_Alarm @@ 0 = LAND  ^Bad_STDZ_Alarm @@ 0 = LAND  IF 
+17 LINE.NUM 1 ^Gauge_Healthy @! 
+18 LINE.NUM ELSE 
+19 LINE.NUM 0 ^Gauge_Healthy @! 
+20 LINE.NUM THEN 
+22 LINE.NUM ^Gauge_Healthy @@ 1 = ~Shutter_CMD @@I 1 = LAND  ^Gauge_In_STDZ @@ 0 = LAND  IF 
+23 LINE.NUM 1 ^Gauge_Ready @! 
+24 LINE.NUM ELSE 
+25 LINE.NUM 0 ^Gauge_Ready @! 
+26 LINE.NUM THEN 
+-3 JUMP ;
+T: T4
+DUMMY
+4_0
+4_69
+4_70
+4_71
+T;
+&Scratchpad ' T4 SETTASK
+: 2_0
+2 JUMP ;
+: 2_1
+1 LINE.NUM ~E_Stop_Local @@I 1 = ~Shutter_RMT_DSCNT_Status @@I 0 = LOR  IF 
+2 LINE.NUM 0 ~CFRM_FWD_CMD @! 
+2 LINE.NUM 0 ~CFRM_REV_CMD @! 
+2 LINE.NUM 0 ~Shutter_CMD @! 
+2 LINE.NUM 0 ~RX_HEATER_CMD @! 
+3 LINE.NUM 19 ^Scanner_Status @! 
+4 LINE.NUM ELSE 
+4 LINE.NUM THEN 
+6 LINE.NUM ^Alloy_TGT @@ 1.234500e-001 F= ^BW_Spec_Gravity @@ 1 I>F F= LOR  IF 
+6 LINE.NUM 1 ^GDR_Load_Alarm @! 
+6 LINE.NUM ELSE 
+6 LINE.NUM 0 ^GDR_Load_Alarm @! 
+6 LINE.NUM THEN 
+10 LINE.NUM ^Scanner_Status @@ 4 = ^STDZ_Required @@ 1 = LAND  IF 
+11 LINE.NUM 10 ^Scanner_Status @! 
+12 LINE.NUM ELSE 
+12 LINE.NUM THEN 
+16 LINE.NUM ^Scanner_Status @@ 4 = ^Scanner_Status_Manual @@ 22 = LAND  IF 
+17 LINE.NUM 15 ^Scanner_Status @! 
+18 LINE.NUM ELSE 
+18 LINE.NUM THEN 
+20 LINE.NUM ^Shutter_Fault_Alarm @@ ^Shutter_Fault_Open @! 
+22 LINE.NUM ~DTR_HV_Monitor @@ 1000 I>F F* ^HVPS_RX_Mon @! 
+11 JUMP ;
+: 2_10
+1 LINE.NUM ~CIU_CAB_TEMP @@ ^SSIU_Cabinet_Temp @! 
+3 LINE.NUM ~DTR_Head_TEMP @@ ^Temp_RX_Head @! 
+5 LINE.NUM ~Shutter_RMT_DSCNT_Status @@I 1 = ^RX_HEATER_CTRL @@ 1 = LAND  ^Temp_RX_Head @@ 0 I>F F> LAND  IF 
+7 LINE.NUM ^Temp_RX_Head @@ ^RX_HEATER_SP @@ F< IF 
+8 LINE.NUM 1 ~RX_HEATER_CMD @! 
+9 LINE.NUM ELSE 
+9 LINE.NUM ^Temp_RX_Head @@ ^RX_HEATER_SP @@ F>= IF 
+10 LINE.NUM 0 ~RX_HEATER_CMD @! 
+11 LINE.NUM THEN 
+12 LINE.NUM THEN 
+13 LINE.NUM THEN 
+4 JUMP ;
+: 2_14
+
+1 LINE.NUM
+  2.0    FDELAY
+-3 JUMP ;
+: 2_87
+
+1 LINE.NUM
+  1    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1.0    FDELAY
+1 JUMP ;
+: 2_88
+
+1 LINE.NUM
+  3    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1.0    FDELAY
+0 JUMP ;
+: 2_93
+
+1 LINE.NUM
+  10    DELAY
+-5 JUMP ;
+: 2_101
+3 LINE.NUM ~CFRM_MAN_Comp @@I 1 = IF 
+4 LINE.NUM 1 ^ON_Sheet_Request @! 
+5 LINE.NUM ELSE 
+6 LINE.NUM 0 ^ON_Sheet_Request @! 
+7 LINE.NUM THEN 
+9 LINE.NUM ~Shutter_MAN_Comp @@I 1 = IF 
+10 LINE.NUM 99 ^Scanner_Status @! 
+11 LINE.NUM 1 I>F  FDELAY 
+12 LINE.NUM ~Shutter_CMD @@I 0 = IF 
+13 LINE.NUM 1 ~Shutter_CMD @! 
+14 LINE.NUM THEN 
+15 LINE.NUM THEN 
+0 JUMP ;
+: 2_102
+1 LINE.NUM ~Shutter_Open_Status @@I 0 = IF 
+2 LINE.NUM 1 ~Green_Lamp_Local @! 
+2 LINE.NUM 0 ~Red_Lamp_Local @! 
+2 LINE.NUM 1 ~Green_Lamp_RMT @! 
+2 LINE.NUM 0 ~Red_Lamp_RMT @! 
+3 LINE.NUM ELSE 
+4 LINE.NUM 1 ~Red_Lamp_Local @! 
+4 LINE.NUM 0 ~Green_Lamp_Local @! 
+4 LINE.NUM 1 ~Red_Lamp_RMT @! 
+4 LINE.NUM 0 ~Green_Lamp_RMT @! 
+5 LINE.NUM THEN 
+7 LINE.NUM ^Scanner_Status @@ 1 = ^Scanner_Status @@ 2 = LOR  ~CFRM_FWD_PB @@I 1 = LOR  IF 
+8 LINE.NUM 1 ~CFRM_FWD_PB_Lamp @! 
+9 LINE.NUM 2 I>F  FDELAY 
+10 LINE.NUM ELSE 
+11 LINE.NUM 0 ~CFRM_FWD_PB_Lamp @! 
+12 LINE.NUM THEN 
+14 LINE.NUM ^Scanner_Status @@ 3 = ^Scanner_Status @@ 4 = LOR  ~CFRM_REV_PB @@I 1 = LOR  IF 
+15 LINE.NUM 1 ~CFRM_REV_PB_Lamp @! 
+16 LINE.NUM 2 I>F  FDELAY 
+17 LINE.NUM ELSE 
+18 LINE.NUM 0 ~CFRM_REV_PB_Lamp @! 
+19 LINE.NUM THEN 
+-8 JUMP ;
+: 2_107
+
+1 LINE.NUM
+  1    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1.0    FDELAY
+-8 JUMP ;
+: 2_45
+FALSE
+
+1 LINE.NUM
+  ~Scan_Request   ?ON
+LOR
+
+2 LINE.NUM
+  ^ON_Sheet_Request @@ 
+  1    =
+LOR
+IF 0 ELSE -9 THEN JUMP ;
+: 2_56
+FALSE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LOR
+
+2 LINE.NUM
+  ^Scanner_Status @@ 
+  2    =
+LOR
+IF -10 ELSE -3 THEN JUMP ;
+: 2_80
+TRUE
+
+1 LINE.NUM
+  ~CFRM_REV_PB   ?ON
+LAND
+IF 2 ELSE -3 THEN JUMP ;
+: 2_81
+TRUE
+
+1 LINE.NUM
+  ~CFRM_FWD_PB   ?ON
+LAND
+IF 0 ELSE -2 THEN JUMP ;
+: 2_85
+FALSE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LOR
+
+2 LINE.NUM
+  ^Scanner_Status @@ 
+  2    =
+LOR
+IF -9 ELSE -11 THEN JUMP ;
+: 2_86
+FALSE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  3    =
+LOR
+
+2 LINE.NUM
+  ^Scanner_Status @@ 
+  4    =
+LOR
+IF -10 ELSE -11 THEN JUMP ;
+T: T2
+DUMMY
+2_0
+2_1
+2_10
+2_14
+2_87
+2_88
+2_93
+2_101
+2_102
+2_107
+2_45
+2_56
+2_80
+2_81
+2_85
+2_86
+T;
+&Utility ' T2 SETTASK
+CREATE T.ARRAY
+&Counter_Inputs ,
+&MIS ,
+&Powerup ,
+&Scan ,
+&Scratchpad ,
+&Utility ,
+ 0 ,
+CREATE V.ARRAY
+^A1 ,
+^A2 ,
+^A3 ,
+^A4 ,
+^A5 ,
+^A6 ,
+^A7 ,
+^Alloy_ID ,
+^Alloy_ID_Old ,
+^Alloy_TGT ,
+^Alloy_TGT_Old ,
+^Analog_Filter_Weight ,
+^Bad_BKGND_Max ,
+^Bad_BKGND_Min ,
+^Bad_STDZ_Alarm ,
+^Basis_Weight_Now ,
+^Basis_Weight_Now_1 ,
+^Basis_Weight_Now_2 ,
+^Basis_Weight_Now_3 ,
+^BW_Conv ,
+^BW_Corr ,
+^BW_Dyn_Offset ,
+^BW_KCM ,
+^BW_Spec_Gravity ,
+^Coil_Avg ,
+^Coil_Avg_Temp ,
+^Coil_Counter ,
+^Coil_Max ,
+^Coil_Max_Temp ,
+^Coil_Min ,
+^Coil_Min_Temp ,
+^D1 ,
+^D2 ,
+^D3 ,
+^FIVE ,
+^FOUR ,
+^FWD_Limit_Delay ,
+^Gauge_Healthy ,
+^Gauge_In_STDZ ,
+^Gauge_Ready ,
+^GDR_Load_Alarm ,
+^HVPS_RX_Mon ,
+^Loop_Counter_Sample ,
+^Loop_Counter_STDZ ,
+^Measure_Start ,
+^Measure_Stop ,
+^ON_Sheet_Request ,
+^ONE ,
+^RX_HEATER_CTRL ,
+^RX_HEATER_ON_DELAY ,
+^RX_HEATER_SP ,
+^Sample_Value ,
+^Sample_Value_1 ,
+^Sample_Value_Temp ,
+^Sample_Voltage ,
+^Scanner_Status ,
+^Scanner_Status_Manual ,
+^Shutter_Fault_Alarm ,
+^Shutter_Fault_Closed ,
+^Shutter_Fault_Open ,
+^SSIU_Cabinet_Temp ,
+^Status_Comm_Trashcan ,
+^Status_Scratchpad_IN ,
+^Status_Scratchpad_IP ,
+^Status_Scratchpad_IP_N21 ,
+^Status_Scratchpad_OP ,
+^Status_Scratchpad_Out ,
+^Status_Trashcan ,
+^STDZ_Aborted ,
+^STDZ_Closed_Max ,
+^STDZ_Closed_Max_Alarm ,
+^STDZ_Closed_Min ,
+^STDZ_Closed_Temp ,
+^STDZ_Closed_Volts ,
+^STDZ_Open_Max ,
+^STDZ_Open_Min ,
+^STDZ_Open_Min_Alarm ,
+^STDZ_Open_Temp ,
+^STDZ_Open_Volts ,
+^STDZ_Required ,
+^Temp_RX_Head ,
+^TWELVE ,
+^ZERO ,
+*_HSV_SEMA ,
+*_HSV_TEMP ,
+ 0 ,
+CREATE TI.ARRAY
+^STDZ_Timer ,
+ 0 ,
+CREATE PTR.ARRAY
+ 0 ,
+CREATE TA.ARRAY 
+}Opto_Table_In_AB ,
+}Opto_Table_Out_AB ,
+ 0 ,
+CREATE PTRTABLE.ARRAY 
+ 0 ,
+CREATE B.ARRAY
+%Novelis_Coater2 ,
+ 0 ,
+CREATE P.ARRAY
+~CFRM_FWD_CMD ,
+~CFRM_FWD_LIMIT ,
+~CFRM_FWD_PB ,
+~CFRM_FWD_PB_Lamp ,
+~CFRM_MAN_Comp ,
+~CFRM_REV_CMD ,
+~CFRM_REV_LIMIT ,
+~CFRM_REV_PB ,
+~CFRM_REV_PB_Lamp ,
+~E_Stop_Local ,
+~GAP_Control_Request ,
+~Green_Lamp_Local ,
+~Green_Lamp_RMT ,
+~Red_Lamp_Local ,
+~Red_Lamp_RMT ,
+~RX_HEATER_CMD ,
+~Scan_Request ,
+~Shutter_Closed_Status ,
+~Shutter_CMD ,
+~Shutter_Full_Open ,
+~Shutter_MAN_Comp ,
+~Shutter_Open_Status ,
+~Shutter_RMT_DSCNT_Status ,
+~Basis_Weight ,
+~CIU_CAB_TEMP ,
+~DTR_Head_TEMP ,
+~DTR_HV_Monitor ,
+~Gauge_Actual ,
+~Gauge_Deviation ,
+ 0 ,
+CREATE PID.ARRAY
+ 0 ,
+CREATE E/R.ARRAY
+ 0 ,
+CREATE E/RGROUP.ARRAY
+ 0 ,
+: CONFIG_PORTS
+;
+: W_INIT_IO
+CONFIG_PORTS
+" %Novelis_Coater2  (1/1)" *_HSV_INIT_IO $MOVE 0 ^_HNV_INIT_IO @!
+%Novelis_Coater2 ENABLE
+ " Initializing variables" *_HSV_INIT_IO $MOVE
+0.30913061 ^A1 @!
+-8.2123346 ^A2 @!
+87.952667 ^A3 @!
+-493.97003 ^A4 @!
+1589.4335 ^A5 @!
+-3067.6843 ^A6 @!
+3477.4180 ^A7 @!
+0 ^Alloy_ID @!
+0 ^Alloy_ID_Old @!
+0.0049999999 ^Alloy_TGT @!
+0.00000000 ^Alloy_TGT_Old @!
+10.000000 ^Analog_Filter_Weight @!
+0 ^Bad_BKGND_Max @!
+0 ^Bad_BKGND_Min @!
+0 ^Bad_STDZ_Alarm @!
+0.00000000 ^Basis_Weight_Now @!
+9.9999997e-005 ^Basis_Weight_Now_1 @!
+0.00000000 ^Basis_Weight_Now_2 @!
+0.00000000 ^Basis_Weight_Now_3 @!
+3.9369999e-005 ^BW_Conv @!
+0.00000000 ^BW_Corr @!
+0.00000000 ^BW_Dyn_Offset @!
+1.0000000 ^BW_KCM @!
+2.7100000 ^BW_Spec_Gravity @!
+0.00000000 ^Coil_Avg @!
+0.00000000 ^Coil_Avg_Temp @!
+0 ^Coil_Counter @!
+0.00000000 ^Coil_Max @!
+0.00000000 ^Coil_Max_Temp @!
+0.00000000 ^Coil_Min @!
+0.00000000 ^Coil_Min_Temp @!
+-75.801201 ^D1 @!
+620.95068 ^D2 @!
+1.0000000 ^D3 @!
+5 ^FIVE @!
+4 ^FOUR @!
+0.50000000 ^FWD_Limit_Delay @!
+0 ^Gauge_Healthy @!
+0 ^Gauge_In_STDZ @!
+0 ^Gauge_Ready @!
+0 ^GDR_Load_Alarm @!
+0.00000000 ^HVPS_RX_Mon @!
+0 ^Loop_Counter_Sample @!
+0 ^Loop_Counter_STDZ @!
+0 ^Measure_Start @!
+0 ^Measure_Stop @!
+0 ^ON_Sheet_Request @!
+1 ^ONE @!
+1 ^RX_HEATER_CTRL @!
+2.0000000 ^RX_HEATER_ON_DELAY @!
+80.000000 ^RX_HEATER_SP @!
+0.00000000 ^Sample_Value @!
+0.00000000 ^Sample_Value_1 @!
+0.00000000 ^Sample_Value_Temp @!
+0.00000000 ^Sample_Voltage @!
+4 ^Scanner_Status @!
+0 ^Scanner_Status_Manual @!
+0 ^Shutter_Fault_Alarm @!
+0 ^Shutter_Fault_Closed @!
+0 ^Shutter_Fault_Open @!
+0.00000000 ^SSIU_Cabinet_Temp @!
+0 ^Status_Comm_Trashcan @!
+0 ^Status_Scratchpad_IN @!
+0 ^Status_Scratchpad_IP @!
+0 ^Status_Scratchpad_IP_N21 @!
+0 ^Status_Scratchpad_OP @!
+0 ^Status_Scratchpad_Out @!
+0 ^Status_Trashcan @!
+0 ^STDZ_Aborted @!
+0.30000001 ^STDZ_Closed_Max @!
+0 ^STDZ_Closed_Max_Alarm @!
+0.00000000 ^STDZ_Closed_Min @!
+0.00000000 ^STDZ_Closed_Temp @!
+0.011000000 ^STDZ_Closed_Volts @!
+8.6737003 ^STDZ_Open_Max @!
+7.6910000 ^STDZ_Open_Min @!
+0 ^STDZ_Open_Min_Alarm @!
+0.00000000 ^STDZ_Open_Temp @!
+7.0134001 ^STDZ_Open_Volts @!
+0 ^STDZ_Required @!
+0.0 ^STDZ_Timer SetTimer
+0.00000000 ^Temp_RX_Head @!
+12 ^TWELVE @!
+0 ^ZERO @!
+0.00000000 0 -1 }Opto_Table_In_AB InitTable
+0.00000000 0 -1 }Opto_Table_Out_AB InitTable
+ " " *_HSV_INIT_IO $MOVE
+;
+T: T_INIT_IO
+W_INIT_IO
+&Powerup START.T DROP
+T;
+&_INIT_IO ' T_INIT_IO  SETTASK
+   : _RUN
+   CLEARERRORS
+   &_INIT_IO START.T DROP
+   ;
+: DATESTAMP ." 05/07/19 " ;
+: TIMESTAMP ." 14:29:46 " ;
+: CRCSTAMP  ." 00112233445566778899AABBCCDDEEFF " ;
+MAKECHECK
+CLEAR.BREAKS

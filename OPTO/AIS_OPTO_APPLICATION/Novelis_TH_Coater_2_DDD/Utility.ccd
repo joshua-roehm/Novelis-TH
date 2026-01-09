@@ -1,0 +1,201 @@
+: 2_0
+2 JUMP ;
+: 2_1
+1 LINE.NUM ~E_Stop_Local @@I 1 = ~Shutter_RMT_DSCNT_Status @@I 0 = LOR  IF 
+2 LINE.NUM 0 ~CFRM_FWD_CMD @! 
+2 LINE.NUM 0 ~CFRM_REV_CMD @! 
+2 LINE.NUM 0 ~Shutter_CMD @! 
+2 LINE.NUM 0 ~RX_HEATER_CMD @! 
+3 LINE.NUM 19 ^Scanner_Status @! 
+4 LINE.NUM ELSE 
+4 LINE.NUM THEN 
+6 LINE.NUM ^Alloy_TGT @@ 1.234500e-001 F= ^BW_Spec_Gravity @@ 1 I>F F= LOR  IF 
+6 LINE.NUM 1 ^GDR_Load_Alarm @! 
+6 LINE.NUM ELSE 
+6 LINE.NUM 0 ^GDR_Load_Alarm @! 
+6 LINE.NUM THEN 
+10 LINE.NUM ^Scanner_Status @@ 4 = ^STDZ_Required @@ 1 = LAND  IF 
+11 LINE.NUM 10 ^Scanner_Status @! 
+12 LINE.NUM ELSE 
+12 LINE.NUM THEN 
+16 LINE.NUM ^Scanner_Status @@ 4 = ^Scanner_Status_Manual @@ 22 = LAND  IF 
+17 LINE.NUM 15 ^Scanner_Status @! 
+18 LINE.NUM ELSE 
+18 LINE.NUM THEN 
+20 LINE.NUM ^Shutter_Fault_Alarm @@ ^Shutter_Fault_Open @! 
+22 LINE.NUM ~DTR_HV_Monitor @@ 1000 I>F F* ^HVPS_RX_Mon @! 
+11 JUMP ;
+: 2_10
+1 LINE.NUM ~CIU_CAB_TEMP @@ ^SSIU_Cabinet_Temp @! 
+3 LINE.NUM ~DTR_Head_TEMP @@ ^Temp_RX_Head @! 
+5 LINE.NUM ~Shutter_RMT_DSCNT_Status @@I 1 = ^RX_HEATER_CTRL @@ 1 = LAND  ^Temp_RX_Head @@ 0 I>F F> LAND  IF 
+7 LINE.NUM ^Temp_RX_Head @@ ^RX_HEATER_SP @@ F< IF 
+8 LINE.NUM 1 ~RX_HEATER_CMD @! 
+9 LINE.NUM ELSE 
+9 LINE.NUM ^Temp_RX_Head @@ ^RX_HEATER_SP @@ F>= IF 
+10 LINE.NUM 0 ~RX_HEATER_CMD @! 
+11 LINE.NUM THEN 
+12 LINE.NUM THEN 
+13 LINE.NUM THEN 
+4 JUMP ;
+: 2_14
+
+1 LINE.NUM
+  2.0    FDELAY
+-3 JUMP ;
+: 2_87
+
+1 LINE.NUM
+  1    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1.0    FDELAY
+1 JUMP ;
+: 2_88
+
+1 LINE.NUM
+  3    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1.0    FDELAY
+0 JUMP ;
+: 2_93
+
+1 LINE.NUM
+  10    DELAY
+-5 JUMP ;
+: 2_101
+3 LINE.NUM ~CFRM_MAN_Comp @@I 1 = IF 
+4 LINE.NUM 1 ^ON_Sheet_Request @! 
+5 LINE.NUM ELSE 
+6 LINE.NUM 0 ^ON_Sheet_Request @! 
+7 LINE.NUM THEN 
+9 LINE.NUM ~Shutter_MAN_Comp @@I 1 = IF 
+10 LINE.NUM 99 ^Scanner_Status @! 
+11 LINE.NUM 1 I>F  FDELAY 
+12 LINE.NUM ~Shutter_CMD @@I 0 = IF 
+13 LINE.NUM 1 ~Shutter_CMD @! 
+14 LINE.NUM THEN 
+15 LINE.NUM THEN 
+0 JUMP ;
+: 2_102
+1 LINE.NUM ~Shutter_Open_Status @@I 0 = IF 
+2 LINE.NUM 1 ~Green_Lamp_Local @! 
+2 LINE.NUM 0 ~Red_Lamp_Local @! 
+2 LINE.NUM 1 ~Green_Lamp_RMT @! 
+2 LINE.NUM 0 ~Red_Lamp_RMT @! 
+3 LINE.NUM ELSE 
+4 LINE.NUM 1 ~Red_Lamp_Local @! 
+4 LINE.NUM 0 ~Green_Lamp_Local @! 
+4 LINE.NUM 1 ~Red_Lamp_RMT @! 
+4 LINE.NUM 0 ~Green_Lamp_RMT @! 
+5 LINE.NUM THEN 
+7 LINE.NUM ^Scanner_Status @@ 1 = ^Scanner_Status @@ 2 = LOR  ~CFRM_FWD_PB @@I 1 = LOR  IF 
+8 LINE.NUM 1 ~CFRM_FWD_PB_Lamp @! 
+9 LINE.NUM 2 I>F  FDELAY 
+10 LINE.NUM ELSE 
+11 LINE.NUM 0 ~CFRM_FWD_PB_Lamp @! 
+12 LINE.NUM THEN 
+14 LINE.NUM ^Scanner_Status @@ 3 = ^Scanner_Status @@ 4 = LOR  ~CFRM_REV_PB @@I 1 = LOR  IF 
+15 LINE.NUM 1 ~CFRM_REV_PB_Lamp @! 
+16 LINE.NUM 2 I>F  FDELAY 
+17 LINE.NUM ELSE 
+18 LINE.NUM 0 ~CFRM_REV_PB_Lamp @! 
+19 LINE.NUM THEN 
+-8 JUMP ;
+: 2_107
+
+1 LINE.NUM
+  1    ABS
+  ^Scanner_Status @! 
+
+2 LINE.NUM
+  1.0    FDELAY
+-8 JUMP ;
+: 2_45
+FALSE
+
+1 LINE.NUM
+  ~Scan_Request   ?ON
+LOR
+
+2 LINE.NUM
+  ^ON_Sheet_Request @@ 
+  1    =
+LOR
+IF 0 ELSE -9 THEN JUMP ;
+: 2_56
+FALSE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LOR
+
+2 LINE.NUM
+  ^Scanner_Status @@ 
+  2    =
+LOR
+IF -10 ELSE -3 THEN JUMP ;
+: 2_80
+TRUE
+
+1 LINE.NUM
+  ~CFRM_REV_PB   ?ON
+LAND
+IF 2 ELSE -3 THEN JUMP ;
+: 2_81
+TRUE
+
+1 LINE.NUM
+  ~CFRM_FWD_PB   ?ON
+LAND
+IF 0 ELSE -2 THEN JUMP ;
+: 2_85
+FALSE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  1    =
+LOR
+
+2 LINE.NUM
+  ^Scanner_Status @@ 
+  2    =
+LOR
+IF -9 ELSE -11 THEN JUMP ;
+: 2_86
+FALSE
+
+1 LINE.NUM
+  ^Scanner_Status @@ 
+  3    =
+LOR
+
+2 LINE.NUM
+  ^Scanner_Status @@ 
+  4    =
+LOR
+IF -10 ELSE -11 THEN JUMP ;
+T: T2
+DUMMY
+2_0
+2_1
+2_10
+2_14
+2_87
+2_88
+2_93
+2_101
+2_102
+2_107
+2_45
+2_56
+2_80
+2_81
+2_85
+2_86
+T;
+&Utility ' T2 SETTASK
